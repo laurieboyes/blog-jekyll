@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: ""
-url: "https://laurieboyes.github.io/blog-jekyll/"
+baseurl: "/blog-jekyll"
+url: "https://laurieboyes.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
