@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Making my pop's site responsive | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="My dad heads up a company called Able Governance, which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2016/10/16/making-my-pops-site-responsive.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Making my pop's site responsive</h1>
+    
+    <p class="meta">
+      October 16, 2016
+      
+    </p>
+  </header>
+  <section class="post-content"><p>My dad heads up a company called <a href="http://www.able-governance.co.uk/">Able Governance</a>, which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what their offering actually involves, they wanted to make their website mobile friendly, and I was more than happy to help out.</p>
+
+<p>Here I’ve detailed a selection of the changes I made to make it so.</p>
+
+<p>###Enhance!</p>
+
+<p>First thing I did was stick in a viewport meta tag:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+</code></pre></div></div>
+
+<p>Before (<em>squint</em>):
+<img src="http://static.lrnk.co.uk/blog-content/popsite/meta-before-framed.png#mobile-framed" alt="meta before" /></p>
+
+<p>After:
+<img src="http://static.lrnk.co.uk/blog-content/popsite/meta-after-framed.png#mobile-framed" alt="meta before" /></p>
+
+<p>Although at first glance this does arguably look like a worse experience, the viewport meta tag is very useful for responsive sites. It saves the browser from having to guess at how wide to render the page, ensuring that it’s rendered for the device’s screen width, meaning that the text will be big enough to read.</p>
+
+<p>As far as my understanding goes, this means that at page load (before any user-initiated zooming occurs), 1px on the site is equivalent to 1 pixel of the device’s screen (or whatever the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio">devicePixelRatio</a> is).</p>
+
+<p>There’s plenty more info about <a href="https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag">viewport meta tags</a> on MDN.</p>
+
+<p>###Fat stacks</p>
+
+<p>Most of the pages of the site have a sidebar with some jazzy links to other relevant pages. With our limited space on mobile devices, we needed the body content to occupy the full page width, and so the best thing for these links was for them to stack at the bottom.</p>
+
+<p>Before (scrolling over awkwardly):
+<img src="http://static.lrnk.co.uk/blog-content/popsite/stacking-before-framed.png#mobile-framed" alt="stacking before" /></p>
+
+<p>After (scrolling down with a natural ease):
+<img src="http://static.lrnk.co.uk/blog-content/popsite/stacking-after-framed.png#mobile-framed" alt="stacking after" /></p>
+
+<p>First thing was to remove the existing absolute positioning of the <code class="highlighter-rouge">.content</code> and <code class="highlighter-rouge">.sidebar</code> components and set them both to 100% width, so that by default they’d stack up one on top of the other.</p>
+
+<p>Second was to restore the original layout on wider devices by floating the two left, and, within a <code class="highlighter-rouge">min-width</code> media query, setting their widths proportionally. I left room for a fixed-width margin by making use of <a href="https://developer.mozilla.org/en/docs/Web/CSS/calc">calc()</a>.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.content</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">700px</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nc">.content</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">75%</span> <span class="n">-</span> <span class="m">10px</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="nc">.sidebar</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">25%</span> <span class="n">-</span> <span class="m">10px</span><span class="p">);</span>
+      <span class="nl">margin-left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The result looks like this on desktop:</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/sidebar%20desktop.png" alt="sidebar desktop" /></p>
+
+<p>And this on mobile:
+<img src="http://static.lrnk.co.uk/blog-content/popsite/sidebar%20mobile.png" alt="sidebar mobile" /></p>
+
+<p>And this on both (bonus gif):
+<img src="http://static.lrnk.co.uk/blog-content/popsite/reposiveness.gif" alt="responiveness" /></p>
+
+<p>Hooray.</p>
+
+<p>###Navelucidation</p>
+
+<p>So the existing navigation works great on desktop. It’s your pretty standard styled list of links, some of which have submenus with additional links that reveal themselves on hover.</p>
+
+<p>However, mobile users would find it wanting. To maintain the side-by-side positioning on a smaller screen you’re faced with a choice of horizontal scrolling or squished up boxes that don’t fit the link text in and are hard to press (certainly with my big chunky gamecube-reared thumbs).</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/menu-squished-framed2.png#mobile-framed" alt="menu squished" /></p>
+
+<p>Additionally, the lack of hover state on a touch device meant that, to mobile users, the submenu links were inaccessible.</p>
+
+<p>So, I did a quick google for mobile navigation patterns and found one that would solve these problems (and that I fancied implementing).</p>
+
+<p>####Step 1 - mobile first</p>
+
+<p>First I set up the list of top-level-menu links and styled it up similarly to the existing menu, the main exception being that each link would stack vertically and occupy 100% of the page width.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/menu-stacked-framed.png#mobile-framed" alt="menu squished" /></p>
+
+<p>####Step 2 - digging deep</p>
+
+<p>I set up the sub nav in a similar way, except within the main links. I made an open/close toggle button that would change the height property of the top level link, effectively hiding and showing the submenu.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/menu-expanding-framed2.gif#mobile-framed" alt="menu squished" /></p>
+
+<p>The animation is important, as it subtly provides valuable information for the user about where parts of the page have moved to, avoiding the jarring effect that can occur when elements snap instantly into different positions.</p>
+
+<p>Upsettingly, transitioning from fixed height to auto height doesn’t work with CSS transitions, so for a neat animation, you need to know exactly how high the menu should change to on expand. This isn’t an insurmountable problem however, as we can work it out with a bit of javascript.</p>
+
+<p>####Step 3 - the big reveal</p>
+
+<p>To save valuable mobile-device screen real estate, I collapsed the menu into an all-consuming ‘menu’ item, having it closed by default.  It was also important to animate this open and closed, which meant a bit more height querying, but this is no big deal. The menu is closed by default, meaning the user has to do less scrolling before getting to the content.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/menu-expanding-whole-framed.gif#mobile-framed" alt="menu squished" /></p>
+
+<p>####Step 4 - you are here</p>
+
+<p>I don’t think navigation tools are all that useful if they can’t tell you where you are in addition to where you can go. I made it so that on page load, the current menu item is highlighted to waypoint the current page, and, by necessity, that if the current page is within a submenu, that submenu is expanded on page load.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/popsite/menu-highlight-framed.png#mobile-framed" alt="menu highlighted" /></p>
+
+<p>####Show me the codez</p>
+
+<p>Here’s the code and a demo of the nav in a nice neat jsbin: http://jsbin.com/nidiyay/edit?html,css,js,output</p>
+
+<p>###That’ll do it</p>
+
+<p>As always, there are still improvements that can be made, but for the interim I’m pretty pleased with it! Check it out on your own mobile-or-otherwise device at <a href="http://www.able-governance.co.uk/">able-governance.co.uk</a>, and, if you fancy it, maybe put in a query for pension scheme advice or something while you’re there.</p>
+
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#javascript">#javascript</a>
+    
+    <a class="tag" href="/tags#web">#web</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

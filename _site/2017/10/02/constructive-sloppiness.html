@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Constructive sloppiness | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2017/10/02/constructive-sloppiness.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Constructive sloppiness</h1>
+    
+    <p class="meta">
+      October 2, 2017
+      
+    </p>
+  </header>
+  <section class="post-content"><p><strong><em>Tl;dr</em></strong> <em>For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.</em></p>
+
+<p>The other week, I took part in the FT’s annual internal hackathon. My team and I decided to play with our idea of bringing video-game-style ‘achievements’ into FT.com, with the aim of encouraging exploration and discovery of the site. It was great fun! Check it out:</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/lazy-hackathon/poliwag-screenshot-min.png" alt="poliwag screenshot" /></p>
+
+<p>I got to try out some cringe-inducingly sloppy but highly effective techniques for quickly building rich prototypes. I’m not sure I should really be proud of them but I am.</p>
+
+<h3 id="using-an-online-json-store-as-a-database">Using an online JSON store as a database</h3>
+
+<p>I reckon this saved us bags of time. We needed somewhere to store the info that would inform our users’ achievement progress. It needed to be publicly accessible so other folks could see our ‘profiles’, and ideally it needed to be easy to fiddle so we could throw in some dummy data for a smooth demo.</p>
+
+<p>And along came <a href="https://jsonblob.com/">JSON Blob</a>. It may be designed for mocking backends for testing and development purposes, but here’s all the great benefits you get from using it as a database:</p>
+
+<ul>
+  <li>Simple HTTP API.</li>
+  <li>HTTPS and CORS enabled, allowing us to make requests from client-side code on FT.com.</li>
+  <li>Online UI for easy data fiddling.</li>
+  <li>All this with <em>zero setup</em>. Amazing!</li>
+</ul>
+
+<p>Our trick was to have a single blob to act as the ‘index’, the URL for which was hard-coded in the app. The index had an entry for each of our users, linking their user IDs to the generated JSON Blob IDs.</p>
+
+<p>It worked a treat. However, I’d never use this in the real world because:</p>
+
+<ul>
+  <li>No security whatsoever - a significant problem when you’re storing folks’ web history (even if it is only their FT article views).</li>
+  <li>It <em>probably</em> wouldn’t scale to the real FT.com user-base, who together amass a mighty 700k article views per day. I imagine that <a href="https://github.com/tburch">Tristan</a> (the developer of JSON Blob), though he’s kind enough to provide this tool for free, wouldn’t be particularly impressed if we were to try this out.</li>
+</ul>
+
+<p>For hackathons and the like though, I couldn’t recommend this approach enough. It’s amazing how quickly things go when you gleefully disregard any notion of good security practices.</p>
+
+<h3 id="using-a-chrome-extension-for-collecting-info">Using a Chrome extension for collecting info</h3>
+
+<p>So we needed to be able to collect info on willing folks’ article views so we knew when they’d passed their achievement milestones.</p>
+
+<p>How were we to get the info though? I’d have been very lucky to get a 👍 on a pull request in which I was trying to sneak some guerrilla tracking code into the production site, and I was pretty sure we weren’t allowed to make use of our real production analytics stuff (which probably would have been overkill anyway).</p>
+
+<p>And then it came to us - a <a href="https://developer.chrome.com/extensions">Google Chrome extension</a>! Once again, the advantages were many:</p>
+
+<ul>
+  <li>Super quick to get up and running. Bang out a manifest.json file, add a splash of JS and you’re away.</li>
+  <li>Easy development workflow. Reload the extension from local files to try out your code on the real live site.</li>
+  <li>As the extension injects code into a page that already has all of the session authentication and stuff, it can seamlessly get hold of the user’s ID.</li>
+  <li>Effortlessly share your work by publishing your Chrome extension and chucking people a link to its Chrome Web Store page.</li>
+</ul>
+
+<p>On every FT.com page load, our extension peeped at the URL to check that we were on an article page. Once the reader was deemed to have had a good and genuine read, it would upload a new event to that user’s personal JSON blob.</p>
+
+<p>As a cheeky bonus, we had our tracking code flash up a <a href="https://developer.mozilla.org/en-US/docs/Web/API/notification">web notification</a> to show achievement progress when we saved an event. Pretty snazzy.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/lazy-hackathon/notification.gif" alt="notification" /></p>
+
+<h3 id="displaying-the-achievements-page-with-the-chrome-extension-again">Displaying the achievements page with… the Chrome extension again!</h3>
+
+<p>Now that we were collecting all this juicy info, we needed a way of showing it off.</p>
+
+<p>Ideally we’d have been able to build this too straight into FT.com, but this approach would flounder due to the reasons laid out about above, and even if we did get away with it, it would require a degree of cautious professionalism that would slow us down considerably.</p>
+
+<p>Our saviour was, once again, the humble Chrome extension. Here’s what we did:</p>
+
+<ul>
+  <li>Chose a page to hijack (we went with the myFT page, just because).</li>
+  <li>Effectively removed the original content by hiding it with CSS.</li>
+  <li>Had the extension inject some JS to retrieve our tracking data, plug it into a <a href="http://handlebarsjs.com/">Handlebars</a> template, and sneak it into the chosen page.</li>
+</ul>
+
+<p>This made for some very speedy UI development. The end result was fairly slow to load (seeing as it had to load all the original content before our stuff kicked in) but perfectly serviceable. It also maintained the advantage that our entire hack was contained within the Chrome extension, making it very easy to share.</p>
+
+<h3 id="back-to-reality">Back to reality</h3>
+
+<p>In summary, the hackathon was great and really I enjoyed working at the speed of light and having license for laziness, if only for a couple of days (in fact, it would have been exhausting keep it going for any longer).</p>
+
+<p>Here’s the codez for our thing if you’ll forgive the mess: <a href="https://github.com/laurieboyes/poliwag">github.com/laurieboyes/poliwag</a>.</p>
+
+<p>Thanks to <a href="https://twitter.com/upthebuzzard">@upthebuzzard</a> for organising, to <a href="https://twitter.com/marawanot">@marawanot</a> for being the other half of my team’s development effort, and to Emma for some excellent design work. A final thank you to <a href="https://github.com/tburch">Tristan Birch</a> for maintaining <a href="https://jsonblob.com/">jsonblob.com</a>.</p>
+
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#javascript">#javascript</a>
+    
+    <a class="tag" href="/tags#web">#web</a>
+    
+    <a class="tag" href="/tags#the-ft">#the-ft</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

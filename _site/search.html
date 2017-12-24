@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Search | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="knitting javascript developer software web">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/search.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Search</h1>
+    
+  </header>
+  <section class="post-content"><div class="search">
+    <div id="search-results"></div>
+    <p id="not-found" style="display: none">
+        No results found.
+    </p>
+</div>
+
+
+<script>
+  window.store = {
+    
+      "2017-10-02-constructive-sloppiness-html": {
+        "title": "Constructive sloppiness",
+        "tags": "javascript, web, the-ft",
+        "date": "October 2, 2017",
+        "author": "",
+        "category": "",
+        "content": "Tl;dr For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.The other week, I took part in the FT’s annual internal hackathon. My team and I decided to play with our idea of bringing video-game-style ‘achievements’ into FT.com, with the aim of encouraging exploration and discovery of the site. It was great fun! Check it out:I got to try out some cringe-inducingly sloppy but highly effective techniques for quickly building rich prototypes. I’m not sure I should really be proud of them but I am.Using an online JSON store as a databaseI reckon this saved us bags of time. We needed somewhere to store the info that would inform our users’ achievement progress. It needed to be publicly accessible so other folks could see our ‘profiles’, and ideally it needed to be easy to fiddle so we could throw in some dummy data for a smooth demo.And along came JSON Blob. It may be designed for mocking backends for testing and development purposes, but here’s all the great benefits you get from using it as a database:  Simple HTTP API.  HTTPS and CORS enabled, allowing us to make requests from client-side code on FT.com.  Online UI for easy data fiddling.  All this with zero setup. Amazing!Our trick was to have a single blob to act as the ‘index’, the URL for which was hard-coded in the app. The index had an entry for each of our users, linking their user IDs to the generated JSON Blob IDs.It worked a treat. However, I’d never use this in the real world because:  No security whatsoever - a significant problem when you’re storing folks’ web history (even if it is only their FT article views).  It probably wouldn’t scale to the real FT.com user-base, who together amass a mighty 700k article views per day. I imagine that Tristan (the developer of JSON Blob), though he’s kind enough to provide this tool for free, wouldn’t be particularly impressed if we were to try this out.For hackathons and the like though, I couldn’t recommend this approach enough. It’s amazing how quickly things go when you gleefully disregard any notion of good security practices.Using a Chrome extension for collecting infoSo we needed to be able to collect info on willing folks’ article views so we knew when they’d passed their achievement milestones.How were we to get the info though? I’d have been very lucky to get a 👍 on a pull request in which I was trying to sneak some guerrilla tracking code into the production site, and I was pretty sure we weren’t allowed to make use of our real production analytics stuff (which probably would have been overkill anyway).And then it came to us - a Google Chrome extension! Once again, the advantages were many:  Super quick to get up and running. Bang out a manifest.json file, add a splash of JS and you’re away.  Easy development workflow. Reload the extension from local files to try out your code on the real live site.  As the extension injects code into a page that already has all of the session authentication and stuff, it can seamlessly get hold of the user’s ID.  Effortlessly share your work by publishing your Chrome extension and chucking people a link to its Chrome Web Store page.On every FT.com page load, our extension peeped at the URL to check that we were on an article page. Once the reader was deemed to have had a good and genuine read, it would upload a new event to that user’s personal JSON blob.As a cheeky bonus, we had our tracking code flash up a web notification to show achievement progress when we saved an event. Pretty snazzy.Displaying the achievements page with… the Chrome extension again!Now that we were collecting all this juicy info, we needed a way of showing it off.Ideally we’d have been able to build this too straight into FT.com, but this approach would flounder due to the reasons laid out about above, and even if we did get away with it, it would require a degree of cautious professionalism that would slow us down considerably.Our saviour was, once again, the humble Chrome extension. Here’s what we did:  Chose a page to hijack (we went with the myFT page, just because).  Effectively removed the original content by hiding it with CSS.  Had the extension inject some JS to retrieve our tracking data, plug it into a Handlebars template, and sneak it into the chosen page.This made for some very speedy UI development. The end result was fairly slow to load (seeing as it had to load all the original content before our stuff kicked in) but perfectly serviceable. It also maintained the advantage that our entire hack was contained within the Chrome extension, making it very easy to share.Back to realityIn summary, the hackathon was great and really I enjoyed working at the speed of light and having license for laziness, if only for a couple of days (in fact, it would have been exhausting keep it going for any longer).Here’s the codez for our thing if you’ll forgive the mess: github.com/laurieboyes/poliwag.Thanks to @upthebuzzard for organising, to @marawanot for being the other half of my team’s development effort, and to Emma for some excellent design work. A final thank you to Tristan Birch for maintaining jsonblob.com.",
+        "url": "//2017/10/02/constructive-sloppiness.html"
+      }
+      ,
+    
+      "2016-10-16-making-my-pops-site-responsive-html": {
+        "title": "Making my pop's site responsive",
+        "tags": "javascript, web",
+        "date": "October 16, 2016",
+        "author": "",
+        "category": "",
+        "content": "My dad heads up a company called Able Governance, which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what their offering actually involves, they wanted to make their website mobile friendly, and I was more than happy to help out.Here I’ve detailed a selection of the changes I made to make it so.###Enhance!First thing I did was stick in a viewport meta tag:&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"&gt;Before (squint):After:Although at first glance this does arguably look like a worse experience, the viewport meta tag is very useful for responsive sites. It saves the browser from having to guess at how wide to render the page, ensuring that it’s rendered for the device’s screen width, meaning that the text will be big enough to read.As far as my understanding goes, this means that at page load (before any user-initiated zooming occurs), 1px on the site is equivalent to 1 pixel of the device’s screen (or whatever the devicePixelRatio is).There’s plenty more info about viewport meta tags on MDN.###Fat stacksMost of the pages of the site have a sidebar with some jazzy links to other relevant pages. With our limited space on mobile devices, we needed the body content to occupy the full page width, and so the best thing for these links was for them to stack at the bottom.Before (scrolling over awkwardly):After (scrolling down with a natural ease):First thing was to remove the existing absolute positioning of the .content and .sidebar components and set them both to 100% width, so that by default they’d stack up one on top of the other.Second was to restore the original layout on wider devices by floating the two left, and, within a min-width media query, setting their widths proportionally. I left room for a fixed-width margin by making use of calc()..content {   width: 100%;   float: left;}.sidebar {   width: 100%;   float: left;}@media (min-width: 700px) {   .content {      width: calc(75% - 10px);   }   .sidebar {      width: calc(25% - 10px);      margin-left: 20px;   }}The result looks like this on desktop:And this on mobile:And this on both (bonus gif):Hooray.###NavelucidationSo the existing navigation works great on desktop. It’s your pretty standard styled list of links, some of which have submenus with additional links that reveal themselves on hover.However, mobile users would find it wanting. To maintain the side-by-side positioning on a smaller screen you’re faced with a choice of horizontal scrolling or squished up boxes that don’t fit the link text in and are hard to press (certainly with my big chunky gamecube-reared thumbs).Additionally, the lack of hover state on a touch device meant that, to mobile users, the submenu links were inaccessible.So, I did a quick google for mobile navigation patterns and found one that would solve these problems (and that I fancied implementing).####Step 1 - mobile firstFirst I set up the list of top-level-menu links and styled it up similarly to the existing menu, the main exception being that each link would stack vertically and occupy 100% of the page width.####Step 2 - digging deepI set up the sub nav in a similar way, except within the main links. I made an open/close toggle button that would change the height property of the top level link, effectively hiding and showing the submenu.The animation is important, as it subtly provides valuable information for the user about where parts of the page have moved to, avoiding the jarring effect that can occur when elements snap instantly into different positions.Upsettingly, transitioning from fixed height to auto height doesn’t work with CSS transitions, so for a neat animation, you need to know exactly how high the menu should change to on expand. This isn’t an insurmountable problem however, as we can work it out with a bit of javascript.####Step 3 - the big revealTo save valuable mobile-device screen real estate, I collapsed the menu into an all-consuming ‘menu’ item, having it closed by default.  It was also important to animate this open and closed, which meant a bit more height querying, but this is no big deal. The menu is closed by default, meaning the user has to do less scrolling before getting to the content.####Step 4 - you are hereI don’t think navigation tools are all that useful if they can’t tell you where you are in addition to where you can go. I made it so that on page load, the current menu item is highlighted to waypoint the current page, and, by necessity, that if the current page is within a submenu, that submenu is expanded on page load.####Show me the codezHere’s the code and a demo of the nav in a nice neat jsbin: http://jsbin.com/nidiyay/edit?html,css,js,output###That’ll do itAs always, there are still improvements that can be made, but for the interim I’m pretty pleased with it! Check it out on your own mobile-or-otherwise device at able-governance.co.uk, and, if you fancy it, maybe put in a query for pension scheme advice or something while you’re there.",
+        "url": "//2016/10/16/making-my-pops-site-responsive.html"
+      }
+      ,
+    
+      "2016-10-04-adventures-with-neo4j-and-timetrees-html": {
+        "title": "Adventures with Neo4j and Timetrees",
+        "tags": "neo4j, the-ft",
+        "date": "October 4, 2016",
+        "author": "",
+        "category": "",
+        "content": "Today a blog post I wrote was published on the Financial Times’ Engine Room blog. It’s about how my team and I handle time-based queries in our Neo4j graph database.Here it is!If you’re unfamiliar with the concept of graph databases I can imagine it makes for pretty dry reading, but there we are. Enjoy!",
+        "url": "//2016/10/04/adventures-with-neo4j-and-timetrees.html"
+      }
+      ,
+    
+      "2016-08-10-beneath-this-cool-calm-exterior-html": {
+        "title": "Beneath this cool, calm exterior",
+        "tags": "javascript, games",
+        "date": "August 10, 2016",
+        "author": "",
+        "category": "",
+        "content": "In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the Ludum Dare 48-hour game competition.My entry was, uh, pretty weird. The theme, announced at the very start of the 48-hour window late on the Friday evening, was Beneath the surface. Many people entered underwater themed games, or mining games. I decided that my game would take a look beneath the surface of  my own fragile outward calm.#####Play the game: Beneath this cool, calm exteriorMove: wasd Shoot: arrow keysStart, next level: space bar#####View the code: github.com/laurieboyes/beneath-this-cool-calm-exterior#####View the competition entry: Ludum DareFundamentally, it’s a very basic shooter game. The enemies are my insecurities, and some of them spout fun exaggerations on my own internal monologue. When a player collides with an insecurity, they are presented with a picture of my face, moving through an array of increasingly distressed expressions.Did I win? No! Of course not. But I was pretty happy with my results. Competing against a not insignificant 2495 entries, I came in 14th place for humour (putting me in the top 1 percent!), 98th for theme, and… less good for everything else:###The making ofThe heavy lifting in the code was done by a 2D game library called melonJS. It was very nice to work with and I’d use it again.####Bom bom bom bomThe rules of the competition state that all assets (e.g. graphics and sound) must be created within the 48-hour window. I did all the sound effects on bfxr, and the music with my own mouth. Sadly, I didn’t get around to putting in a mute button for the music, but I think the sense of agitation it evokes after about 8 seconds of listening really contributes to the overall feel.####Making it betterMy flatmate, true to form, looked up from his own entry to peer over my shoulder and then put me onto a ridiculously good presentation by Vlambeer about improving the ‘game feel’ (although that’s a term they contest).It came with an interactive demo, which sadly seems to have disappeared, but the talk it accompanied survives and is great: Jan Willem Nijman - Vlambeer - ‘The art of screenshake’.The talk is filled to bursting with rich wisdom nuggets, but with my short time allowance, I chose to implement a just few of the improvements I thought would be most effective:  Upping the shoot frequency  Upping the bullet size  Adding some screen shakeThe astonishing difference these small changes can make is hard to believe without watching that talk but you get some of the effect in these before and after gifs.Pre tweak:Post tweak:In conclusion, this was my first timeboxed game/code jam and I enjoyed it a lot and will absolutely commit doing it or something similar again one of these days.",
+        "url": "//2016/08/10/beneath-this-cool-calm-exterior.html"
+      }
+      ,
+    
+      "2016-07-24-mucking-about-with-image-data-in-javascript-html": {
+        "title": "Mucking about with image data in JavaScript",
+        "tags": "javascript",
+        "date": "July 24, 2016",
+        "author": "",
+        "category": "",
+        "content": "Earlier this year I wrote ScarfParty, a knitting companion that centred around a dynamic pattern display that changed along with the knitter’s progress. The pattern information was loaded in from a small black and white image. If you’re interested, you can learn more about my adventures with scarves.This post is about the code behind taking in that image and regurgitating it in a different form that I could play around with.All the code referenced in this post: github.com/laurieboyes/scarfparty-v2/blob/master/src/pattern.jsAnd the tests: github.com/laurieboyes/scarfparty-v2/blob/master/test/tests/pattern.spec.js####Reading the imageProblem number one was to get the information out of the image with JavaScript.I hadn’t a clue how this would happen or whether there’d even be an API for it but I had one if those googling eureka moments when I came across the technique of drawing an image to a canvas and interrogating the canvas for the information using ctx.getImageData (I think it was this StackOverflow answer). Neat./** * @param img * @returns {Array} array of integers representing the image,  * wherein each pixel is represented by a group of 4 numbers * between 0 and 255 corresponding to its rgba values */function getImageData(img) {    //Create a canvas in memory that we can use to get the pattern image data    const canvas = document.createElement('canvas');    canvas.width = img.naturalWidth;    canvas.height = img.naturalHeight;    const ctx = canvas.getContext('2d');    ctx.drawImage(img, 0, 0);    return Array.from(ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data);}For example, when passed this very small image 3 x 2 pixels in size:My getImageData function returns the following array:[255,255,255,255,0,0,0,255,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255]Broken down into pixels, we can see that each is represented by its 4-number rgba value[ 255,255,255,255,   0,  0,  0,  255,   0,  0,  0,  255, 255,255,255,255,   255,255,255,255,   255,255,255,255]####Translating the image dataI needed to turn this flat array of information into something meaningful and easy to use to recreate the image. All I really needed to know was which pixels were black and which were white, so I wrote this small function to take the results of the above and turn them into a flat array of 1s and 0s./** * @param imageData * @returns {Array} array of 1s and 0s, one element for each pixel in the pattern, read one row at a time from left to * right. A value of 1 represents that the pixel is the dark colour and 0 that it is light */function getPixelsOnOff(imageData) {    return imageData        // only have to look at one colour channel to know if it's black or white, so just look at the red of each        // pixel, filtering the rest out        .filter((_, i) =&gt; i % 4 === 0)        // if the value is greater than 127 (~half of the maximum of 255) it's light, else it's dark        .map(pixel =&gt; pixel &gt; 127 ? 0 : 1);}When passed the array resulting from the getImageData function call above, the getPixelsOnOff function returns this array:[0,1,1,0,0,0]The final step was to group the array into rows, all set to be visualised. As we know the image dimensions from the image itself, this part is trivial.[    [0,1,1],    [0,0,0]]And there we have it! We now have an easy to read array of the on/off state of each pixel, grouped into rows, which we can use to redisplay the image in any way we choose. In my case this basically involved looping over the nested arrays and drawing squares on a canvas with the appropriate position and colour.####Controversial choicesMy flatmate, peering over my shoulder, has just pointed out that returning 1s and 0s rather than booleans is a bit of a code smell. My best guess as to why I didn’t think of this myself at the time is that doing it this way made my test cases look nicer:// if you squint you can almost see itexpect(pattern.rows).to.deep.equal([\t[0, 0, 0, 0, 0, 0, 0, 0, 0],\t[0, 0, 0, 0, 0, 0, 0, 0, 0],\t[0, 0, 1, 0, 0, 0, 1, 0, 0],\t[0, 1, 1, 1, 0, 1, 1, 1, 0],\t[0, 1, 1, 1, 1, 1, 1, 1, 0],\t[0, 1, 1, 1, 1, 1, 1, 1, 0],\t[0, 0, 1, 1, 1, 1, 1, 0, 0],\t[0, 0, 0, 1, 1, 1, 0, 0, 0],\t[0, 0, 0, 0, 1, 0, 0, 0, 0],\t[0, 0, 0, 0, 0, 0, 0, 0, 0],\t[0, 0, 0, 0, 0, 0, 0, 0, 0]]);",
+        "url": "//2016/07/24/mucking-about-with-image-data-in-javascript.html"
+      }
+      ,
+    
+      "2016-07-18-the-christmas-fam-scarf-part-3-html": {
+        "title": "The Christmas fam scarf | Part three: ScarfParty - your solution to the pixel pattern problem",
+        "tags": "knitting, javascript, the-christmas-fam-scarf",
+        "date": "July 18, 2016",
+        "author": "",
+        "category": "",
+        "content": "Welcome to the eagerly-anticipated concluding chapter of the tale of the Christmas fam scarf! The series explores in excruciating detail the creation of the scarf I lovingly crafted for my brother and his girlfriend for Christmas 2015.This third and final post showcases the app I made to solve a crucial problem in the completion of the scarf.If you’re unsure of what a pixel pattern is, see Part one: The intro and the pattern.If you’re pretty much on-board with the concept of knitting your own complex, non-repeating scarf design but aren’t sure what problem I’m trying to solve here, see Part two: The actual knitting. The general gist is that once these pixel patterns reach a certain level of complexity they do become very hard to follow, which is exactly why I made this:#####Use the app for your own pixel pattern: ScarfParty#####Check out the code: github.com/laurieboyes/scarfparty-v2The grid is a dynamic display of the pattern that updates along with your progress. Each square in the grid represents a single stitch. Regardless of your position in the scarf or what side you’re on, the pattern is always read from right to left, and the stitches are always displayed in the colours you need to knit. This is achieved by flipping the colours and design at the end of each row, presenting the pattern similarly to in the demonstration at the end of part 2 of this series.This leaves the knitter with ample mental bandwidth remaining to siphon off into conversation or podcast consumption, and frees them from the anguish of constantly feeling the need to recount theirs rows and stitches. Phew!###Special featuresThe pattern is generated directly from a small black-and-white image, just like the one we end up with as a result of following through the pattern creation guide in part 1. This means we can swap in new versions of our pattern effortlessly (for the bits we haven’t already knitted!) as we work out the finer points of our project. Beat that, graph paper.A number of special features are baked in:  Fully-reponsive mobile-first designKnit in the pub! (Provided you can overcome the burning self-consciousness I find usually comes with knitting in public).  Save your progressPattern and progress info is automatically saved to your device’s HTML5 local storage, allowing everything to be kept up to date and running smoothly without requiring a constant internet connection (Knit on the train!).  Custom coloursChange the colour display to match your own pattern.  Custom stitch incrementMake your own choice about how often you want to let ScarfParty know you’ve done a chunk of stitches.  Stitch markers (experimental)Knitting something bigger, like a blanket? Put stitch markers in the pattern to make it easier to keep track of where you are in a single row.ScarfParty is written in ES2015, and makes use of Origami Build Tools and the polyfill service, both of which are developed and maintained by the good people at the Financial Times.There were a lot of fun problems to solve here, some of which will bubble up as their own little blog posts.This was easily my favourite knitting project to date and ranks pretty highly on my list of favourite side projects. I’d be genuinely astounded and amazed if anyone else were to pick up this blog series and have a go at creating their own pixel-pattern project, but if anyone does, please tweet me!",
+        "url": "//2016/07/18/the-christmas-fam-scarf-part-3.html"
+      }
+      ,
+    
+      "2016-01-31-the-christmas-fam-scarf-part-2-html": {
+        "title": "The Christmas fam scarf | Part two: The actual knitting",
+        "tags": "knitting, the-christmas-fam-scarf",
+        "date": "January 31, 2016",
+        "author": "",
+        "category": "",
+        "content": "Welcome to part two of the tale of the Christmas fam scarf. The blog can be read in any order with no detriment to enjoyment. Here’s a sum-up of each.Part one: The intro and the pattern. Describes how the pixel pattern was created, taking through from photograph all the way to pixelated blob.You’re reading Part two: The actual knitting. This will be an account of what went into the actual knitting of the scarf, referencing some super helpful tutorials and putting them in the context of working from a pixel pattern.Part three: ScarfParty - your solution to the pixel pattern problem will gleefully describe the pattern tracking app I found I had to make to follow the pixel pattern for my much more complex fam faces.###The materialsFor no reason other than that I had some left over from a previous project and had knitted my test duck in it, I used aran/worsted weight wool for my fam scarf. And, for no reason other than that my mum had lent me hers for another previous project, I used 4.5mm aluminium needles.The aforementioned test duck.I nipped out on my lunch break and got the wool for the final scarf from Loop in Islington, London. I ended up needing a bit less than eight 50g, 80 metre balls (four of each colour).Finally, you’ll be grateful for a tapestry needle when you’re tidying up your loose ends.Due to the unscientific nature of my choices in this area, I’m not going to be very good at convincing you whether you should follow my example or learn from its errors. I will tell you that my scarf weighs 366g and that it’s nice and thick and warm, which would be great if we were ever going to have a winter in the UK again. It’s about 7mm thick when it’s not being stretched. Personally, I think it turned out great.###The techniquesThis blog assumes a bit of experience with knitting, or at least familiarity with the concepts of the knit and purl stitches. Not loads though, this is only really my fourth vaguely serviceable project.The technique I used to make the scarf lie flat and look scarfy on both sides is called double knitting or double-sided knitting. This basically involves knitting the two sides at the same time, knitting together the edges and borrowing colour from the other side for the design.####Recommended readingI had a go at making a video tutorial myself and it was just so awful. Happily, youTube is positively bustling with eager knitting tutors, and this video by JoannesWeb absolutely smashes it. I actually learnt from a mishmash of various other videos and articles and only came across this one after my scarf was finished, but I think it’s the best video I’ve found. Highly recommended if you’re gearing up for your own double-sided scarf project.From 0:09 to 0:54 she does a very nice cast on.From 0:56 to 6:24 she demonstrates how to do the first three plain rows.At 8:48 she shows how to bring in colour from the other side for creating designs.####Where I diverge/expandThere are a few things missing from the above video or things I did differently in the fam scarf that I wouldn’t want you to miss out on.#####Casting on for your pixel patternWe want to cast on two more stitches than the width of our pattern, giving us enough stitches to fulfil the pattern itself, and two for each edge. A cast on for a pattern 10 stitches wide might look like this:#####Alternative edgesIn the video, she starts and ends each row by knitting the double stitch (the light and the dark together) and never with a purl.I started off doing this and found it creates this sort of serrated edge on each side:On the fam scarf, I went for a slightly different approach, which is less visible on one side but creates some nice v shapes on the other:Of course, it’s down to personal preference, but if this edge style does appeal, achieving it is no more complicated. Simply knit together the edge stitches when the front side is facing you and purl them when the back side is facing you.Another way of thinking about this is that you knit on the odd rows (the row counter starting at 1) and purl on the even ones.#####Changing yarnsJust to save you some panicked googling when one or both of your first balls of yarn run out, here’s a video from KnitFreedom, which taught me how to change my yarn.#####The cast offI was pretty lazy with my cast off but it turned out fine. I just did a basic cast off, knitting the two stitches for each side together. So, following my cast-off approach for a ten-pixel-wide pattern, you’d cast off 12 stitches total. One for each of the edges, combining the yarns as per usual, and one for each pixel in the pattern, combining them to get both colours in the same stitch.#####Tidying up your loose endsTidying up loose ends on a double knitted scarf is refreshingly easy. As we’ve sort of made a big, occasionally-connected pocket with our two sides, we can just use a tapestry needle to poke them into the middle. Magic.###Following the pixel patternThe fact that our scarf is double-sided makes following the pattern a bit interesting, and I’ll go through an example here. The crucial factors are that, at the end of every row:  The direction of the pattern is reversed  The colours are reversedHere’s our pattern, which I knocked up in Pinta. (see part one for more detail on making pixel patterns). It’s 10x10 and I was originally intending it to be an L for Laurie, but, as you can see, it looks more like a learner driver plate.Let’s surrender to the automotive theme and pretend we’re using white and red wool. The first two rows are just block colour and are therefore pretty simple. We can easily visualise them in our heads like this. Remember that on each row the colours are reversed:(Note that, as demonstrated in the tutorials linked above, when I say to knit a white stitch, I mean to knit a white stitch then purl a red one).The third and fourth rows bring the beginnings of the design into our knitting, and again, without too great a feat of mental acrobatics, can be visualised as follows:The fifth and sixth row get a bit more interesting, as these are the first rows that require us to think about reversing the design for the wrong side. Once again, done in your head, this might look like this:And that’s pretty much it! Obviously, rows seven and eight are identical to five and six respectively, and rows nine and ten mirror the first two. Cast it off, tidy in the ends, stick it on your toy car and admire a job well done.#####Trickier patternsFor simple patterns, visualising this stuff mentally is easy enough. I got all the way through my test duck quite happily, and was even just about smiling as I worked my way through my knitted QR code experiment:You’ll be surprised to learn that it didn’t work.The first several rows of my first attempt at the fam scarf, however, were enough to convince me that I needed to rethink my approach to pattern following. With a complex pattern, it quickly becomes very hard to remember what row and stitch you were on, which colours you should be knitting, and which direction you’re following the pattern in.Even more so when you’re on a phone you bought in 2011 for £150 sim-free (long story) and, no matter how far you try to zoom in, this is the best view of your pixel pattern you can get up in the pub:Oh god.It’s for this reason that I invested time and enthusiasm in ScarfParty, my pixel pattern tracking web app. You can read all about the app, how it was made, and how you can use it for your own double-sided scarf projects in the next exciting chapter of the tale of the Christmas fam scarf.",
+        "url": "//2016/01/31/the-christmas-fam-scarf-part-2.html"
+      }
+      ,
+    
+      "2015-12-24-the-christmas-fam-scarf-part-1-html": {
+        "title": "The Christmas fam scarf | Part one: The intro and the pattern",
+        "tags": "knitting, the-christmas-fam-scarf",
+        "date": "December 24, 2015",
+        "author": "",
+        "category": "",
+        "content": "Ho ho ho! Merry Christmas everyone! It’s Christmas 2015 and my brother and his girlfriend are soon to unwrap what I hope is the most alarming yet heartwarming gift they’ve ever received: Their very own double-sided, two-colour Christmas fam scarf.###What’s in the blogOver the last three months, this scarf and I have been on a journey, from the apprehension of the knitting technique, to the creation of the pattern, then ScarfParty, the web app I wrote to track my pattern, and finally the actual knitting itself. It’s the tale of this journey that I intend to recount in this festive three-part blog.You’re reading Part one: The intro and the pattern. Here you’ll be charmed and intrigued and then you’ll learn how you can create a slick lo-fi pixellated knitting pattern from almost maybe any image.Part two: The actual knitting will cover the knitting itself, the double-sided knitting technique involved and how to use it to bring a pixel pattern to life.Part three: ScarfParty - your solution to the pixel pattern problem will showcase the app I’ve written and open-sourced for following these pixel patterns. If you do have a go at making your own pixel-pattern scarf, you’ll soon realise just how necessary this is!###Right then, this patternHaving undergone many iterations and complete rebirths from its first conception, here it is! Note that this image has been squished (see later), duplicated, and flipped for full effect.All members of the household, great and small, are represented here in loving detail. Each of the component images has been boiled down from a full-sized colour image using super easy colour manipulation. Each pixel represents a single stitch. Let’s go through an example, making a new pattern from scratch.###To follow this tutorial, you will need: Some image editing softwareI found (with my choices limited on my Ubuntu machine) I had to use a variety of different image editing software to achieve all the necessary bits. You can use whatever you like  (unless you find yourself trapped on Ubuntu) but here’s what I ended up on.I used Pinta, Linux’s answer to Paint.net, for most of the image editing. It’s currently in early development but it did most of the work nicely. I have noticed occasional bugs when I’m resizing images, and it’s a bit behind as far as certain tools like layer or selection rotating goes but, for most of it, it worked a treat.I used Pixlr Editor for assembling the image onto the scarf. I have to put aside a lot of prejudice when I discover something’s written in Flash, but this was the best thing I could find for filling the gaps in Pinta. Its brush tools are a bit laggy and its contrast function is a bit lightweight (this, as we will see, is a critical deficiency), but I was still pleased to find it.###Spec’ing out your scarfBefore you start on your pattern, you need to think about how long and wide you want your scarf to be, and how many rows and stitches you need to achieve your desired dimensions. This will of course depend on your needles and your wool and all that. The great thing about this being a scarf is that it doesn’t matter hugely how accurate you are with this. So long as you come out with something long enough to stretch to the circumference of your neck, you’re laughing.For the fam scarf, I did a bit of googling on what makes a good scarf size and found most of the results indicated that pretty much anything goes, but my mum told me she understood that a good scarf length was 150cm and I got the impression 20cm was a good width for a fairly wide scarf, which appealed to me because I knew that the wider the scarf, the more recognisable the images would turn out.I used aran/worsted weight wool and 4.5mm needles. I wouldn’t necessarily follow this example if you think you’ve got a better idea, as my fam scarf is heavy, but it’s certainly not a bad result. After making my little test duck (see part two) I satisfied myself that my pattern wanted to be 30 stitches wide (not including the start and end stitches that form the border), and 300 rows long (again, not including the cast on and off). The final thing ended up being 21cm wide and 147cm high, so not too far wide of the mark.###Are you right there Father Ted?For the sake of variety I’ll make the example from a screen cap of ’90s sitcom Father Ted that I hopefully won’t get in trouble for using.First, cut out his head so that we’re faced with just the image we’re going to drop into the scarf.Once I realised what a good idea it was, I found it incredibly helpful to save a copy after each step. This meant that I could go back and try branching off in different ways if I hit a dead end, instead of starting again from the original image every time.So that we’ve got some definition to work with when we shrink it down, make it a true two-colour jobby by maxing out the contrast slider. Tweak the brightness until you get an image that looks promising (this is definitely more art than science).Warning: Note that I’ve jumped into Paint.NET on my dad’s PC for this. Some image editors are a bit stingy with their contrast setting. For instance, if you were to attempt this step with Pixlr Editor you’d only get as far as this (unless I’m missing something).Not good enough at all.You also might notice that this step has caused us to lose our boundary between what’s Ted and what’s the background. For some images you’ll find that this problem doesn’t manifest, but for others like this one, you might want to go back a step and bolster the outline with a thick black paintbrush. It looks cartoony and strange while the image is still large, but you’ll find it helps later on.For best results, use an image which doesn’t necessitate much work in this step, i.e. one with a lot of high contrast edges around the subject.Now, this is pretty crucial. As became apparent to me about 50 rows into my second attempt, we need to do some fiddling to correct our aspect ratio. I found that my stitches were only approximately 80% as high as they were wide, so simply pixelating an image and shrinking it down was not going to work out. Exhibit A:That’s not my brother.So, we’ll stretch Ted vertically by something like a factor of 1.25. He’ll look weird now, but he’ll look great on the finished product. Remember to turn off ‘maintain aspect ratio’ on whatever tool you’re using to do this.Now it’s shrinking time. We know that we want him and a bit of padding to total 30 pixels wide. This will probably be another step that takes a bit of trial and error. Here’s what I ended up with in this example:Nice! Looks great right? Well, it looks better because our sometimes friend anti-aliasing has brought in I don’t know how many shades of grey - doh! We now need to play with our brightness and contrast settings for a second time. This is the point at which I found myself throwing most of my failed attempts away, and it’s here that you’ll be most grateful that you remembered to save a copy of the image after each step. It’s tricky, but suspend judgement until zooming out and hopefully after a bit of trial and error you’ll find yourself with a winner. You might want to get the 1 pixel paintbrush tool out and patch up missing edge lines again once you’ve found a balance you like for the facial features.Depending on how lucky you are with your image, you might be able to skip the high-contrasting step on the larger version of the image and just to it straight on the small one. I found it easier though to high contrast on the large one, patch up any missing lines from there, then shrink and repeat the process.So there it is! You’ve got yourself a completely unique, highly personalised scarf motif. Copy these onto an image that’s the same height and width in pixels as the number of stitches and rows you worked out you need earlier for the entire scarf and call it a pattern.And here’s what it looks like with the aspect ratio stretching reversed, giving you a better idea of what it’ll look like on the scarf itself.Magnificent.###Bonus featuresHere’s a bit more info on some of the flourishes that went into the fam scarf.####The stripy backgroundI’m ashamed to say that I can’t for the life of me remember where I found the repeating stripy zigzag pattern that made up the background for the fam scarf. If you recognise it as yours, tweet me and I’ll credit you!I really like the way a repeating pattern like this draws the scarf into something more than just a creepy showcase of floating heads. I’m sure lots of things would work, but the stripe pattern was the first thing I tried and it ticked all the boxes for me. I found the easiest way to work with this in the pattern was as follows.First, create a layer which is entirely covered by the repeating pattern. For me this involved a bit of manual pixel painting then a lot of copying and pasting.Make another layer on top that is completely black. This will help us judge our border around our face.Paste in the face, and carve away at the background with the eraser to give it a nice border. This is made easier by the black background. Note that ideally you need an image editor with a hard-edged eraser for this (Paint.NET has let me down here, but Pixlr Editor and Pinta do the trick). Hide the black layer for the end result.Superb.####Adding textI only thought to add text to my scarf on my third and final attempt (my second attempt having been abandoned for unrelated reasons given above) and never have I found a more brilliant silver lining. I like the way it adds variety and I like its ability to remove all doubt about who your picture is supposed to represent. The sad thing is that it sort of takes further away from the reverse side of your finished product, as nothing says ‘Don’t look at this side’ like backwards text. It’s not a huge loss though, as I found the reverse side looks a bit weird anyway.Trippy.I got the font from dafont.com and hopefully I won’t get in trouble for using that either. I found that the easiest way to actually bring it into the pattern was to pencil it in manually, pixel by pixel.You might find if you need to fit a longer word in that you can easily squish up some of the letters, for example, snip off the end of an L or take a pixel’s width out of the horizontal bars of an O.Now you’ve got your pattern, head to Part two: The actual knitting to learn how the pattern comes to life as a real, actual, physical entity.",
+        "url": "//2015/12/24/the-christmas-fam-scarf-part-1.html"
+      }
+      ,
+    
+      "2015-12-23-self-esteem-snake-html": {
+        "title": "Self esteem snake",
+        "tags": "java, games",
+        "date": "December 23, 2015",
+        "author": "",
+        "category": "",
+        "content": "In August 2013 I embarked on another new game project in my then-favourite language Java. Heartened by the knowledge that everyone loves a good classic game clone, I decide to write my own rendition of Snake.#####Download the game: SelfEsteemSnake-1.1-beta.jarMenu - arrow keys to select, return to confirmGame - arrow keys to move, p to pause#####View the code: github.com/laurieboyes/self-esteem-snakeAs well as giving me one more shiny thing to put on my personal website, this project was contrived to help me learn Git (imagine the mess in a world without Git!) and to take a small chip out of the looming monolith that was my imposter syndrome by finally giving me a solid, first-hand understanding of working with Test-driven Development.I decided that the art style should be entirely text based and had a lot of fun with that, not limited to learning some things about when and how one should bundle fonts in jars. A massive bonus this decision gave me was being able to very clearly log the state of the game to the console when debugging. It was also thanks to this decision that I had the idea for the alternative game mode, Bookworm.As you can see, it’s basically snake again, but you collect letters of an article. The game downloads a random article from wikipedia and uses that to form the food string.There must have been a reason for me not using the MediaWiki API because I remember looking into it, but I’m quite pleased I didn’t because this provided with with my first real exposure to web scraping using jsoup.All sorts of fun.",
+        "url": "//2015/12/23/self-esteem-snake.html"
+      }
+      ,
+    
+      "2015-12-20-little-green-men-html": {
+        "title": "Little Green Men",
+        "tags": "javascript, games",
+        "date": "December 20, 2015",
+        "author": "",
+        "category": "",
+        "content": "In June 2012 I’d just finished my degree and, having not yet given up hope of taking the indie gaming scene by storm, embarked on another game project. I decided I’d write a platform game, and that I’d write it using JavaScript and HTML5 canvas.#####Play the game: Little Green MenMove/Jump: wasdShoot: lPause: pMute sound: mLittle Green Men never really fully materialised as a game, but it did come to be a small demo-like app in which a little space man struts, shoots, and rocket-jumps his way around a series of eerie floating numbered blocks, until the player falls off the block and has to refresh the page to end the space man’s torment as he hurtles though endless cyberspace at terminal velocity for the rest of time (or until his y coordinate reaches Number.MAX_VALUE and everything breaks).I made this game long before I was introduced to the concept of uglification, so, if you’re interested, you can check out the code by viewing the source (you can be damned sure I’m not going to have it sullying my github profile). This was really my JavaScript debut. I’d chosen it partly to learn more about the language all the cool kids were talking about, and perhaps more significantly because having it run within a browser made it much easier to show off.Note that the eponymous little green man is the space man! As opposed to a space alien. How’s that for a twist. I see it as my duty to challenge my players’ perceptions.",
+        "url": "//2015/12/20/little-green-men.html"
+      }
+      ,
+    
+      "2015-11-24-tetris-for-egotistical-java-fledglings-html": {
+        "title": "Tetris for egotistical Java fledglings",
+        "tags": "java, games",
+        "date": "November 24, 2015",
+        "author": "",
+        "category": "",
+        "content": "LrnceTetris is a game I wrote in April 2010, just at the tail end of the second year of my Comp Sci degree (an explanation of the name ‘Lrnce’ and its derivatives is a whole other blog post). It’s not the first in its category of did-all-the-fun-stuff-then-got-bored hobby coding projects I’ve worked on over the years but it is the first I’m willing to exhibit with only a slight accompanying cringe.#####Download the game: LrnceTetris.jarThe premise of the game is… Tetris! Of course. It’s a Tetris clone. What budding games programmer hasn’t seen appeal in Tetris’s simple action, it’s easy art, it’s instant familiarity. There’s something about creating your own version of a game you’ve previously consumed with unblinking glee that really makes a project exciting.The main USP of this particular incarnation is the degree of graphical flair. The board is framed by a picture of me, gazing more or less in the direction of the player and wearing a strikingly neutral expression. Each block has a picture of one of my school friends on, and I was pretty proud of the end-game animation too.I decompiled the .jar thinking the five-year-old code within would be positively hilarious (If you’re into that sort of thing), but found that in reality it was just long and boring. All swing.Timer this and extends JPanel that. Nevertheless, it was a nice trip down memory lane.Bonus content: The gif Google Photos made of all of my frame images. I vaguely recall having plans to have my face react when certain game events took place. Sadly, this dream was never realised, but at least we retain this small momento",
+        "url": "//2015/11/24/tetris-for-egotistical-java-fledglings.html"
+      }
+      ,
+    
+      "2015-11-19-my-new-blog-html": {
+        "title": "My new blog",
+        "tags": "",
+        "date": "November 19, 2015",
+        "author": "",
+        "category": "",
+        "content": "Welcome to my first post!I’ve made a decision to rework my personal website into a blog format, moving away from the old bullet-pointed-list-in-a-bootstrap-template style into a much more palatable experience for all.I intend to use this space to showcase and write up on hobby projects I embark on. Some of them will involve coding and some of them will involve knitting. The best ones might even touch on both.Cheers!Laurie",
+        "url": "//2015/11/19/my-new-blog.html"
+      }
+      
+    
+  };
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/0.7.1/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+</section>
+</article>
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
