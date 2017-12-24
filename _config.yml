@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "http://blog.lrnk.co.uk/"
+url: "https://laurieboyes.github.io/blog-jekyll/"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
