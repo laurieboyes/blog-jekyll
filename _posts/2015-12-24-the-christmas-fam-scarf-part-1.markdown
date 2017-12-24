@@ -18,9 +18,9 @@ Over the last three months, this scarf and I have been on a journey, from the ap
 
 You're reading *Part one: The intro and the pattern*. Here you'll be charmed and intrigued and then you'll learn how you can create a slick lo-fi pixellated knitting pattern from almost maybe any image.
 
-[Part two: The actual knitting](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-2) will cover the knitting itself, the double-sided knitting technique involved and how to use it to bring a pixel pattern to life.
+[Part two: The actual knitting](/2016/01/31/the-christmas-fam-scarf-part-2) will cover the knitting itself, the double-sided knitting technique involved and how to use it to bring a pixel pattern to life.
 
-[Part three: ScarfParty - your solution to the pixel pattern problem](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-3) will showcase the app I've written and open-sourced for following these pixel patterns. If you do have a go at making your own pixel-pattern scarf, you'll soon realise just how necessary this is!
+[Part three: ScarfParty - your solution to the pixel pattern problem](/2016/07/18/the-christmas-fam-scarf-part-3) will showcase the app I've written and open-sourced for following these pixel patterns. If you do have a go at making your own pixel-pattern scarf, you'll soon realise just how necessary this is!
 
 ###Right then, this pattern
 
@@ -43,7 +43,7 @@ Before you start on your pattern, you need to think about how long and wide you 
 
 For the fam scarf, I did a bit of googling on what makes a good scarf size and found most of the results indicated that pretty much anything goes, but my mum told me she understood that a good scarf length was 150cm and I got the impression 20cm was a good width for a fairly wide scarf, which appealed to me because I knew that the wider the scarf, the more recognisable the images would turn out.
 
-I used aran/worsted weight wool and 4.5mm needles. I wouldn't necessarily follow this example if you think you've got a better idea, as my fam scarf is *heavy*, but it's certainly not a bad result. After making my little test duck (see [part two](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-2)) I satisfied myself that my pattern wanted to be 30 stitches wide (not including the start and end stitches that form the border), and 300 rows long (again, not including the cast on and off). The final thing ended up being 21cm wide and 147cm high, so not too far wide of the mark.
+I used aran/worsted weight wool and 4.5mm needles. I wouldn't necessarily follow this example if you think you've got a better idea, as my fam scarf is *heavy*, but it's certainly not a bad result. After making my little test duck (see [part two](/2016/01/31/the-christmas-fam-scarf-part-2)) I satisfied myself that my pattern wanted to be 30 stitches wide (not including the start and end stitches that form the border), and 300 rows long (again, not including the cast on and off). The final thing ended up being 21cm wide and 147cm high, so not too far wide of the mark.
 
 
 ###Are you right there Father Ted?
@@ -134,4 +134,4 @@ I got the font from [dafont.com](http://www.dafont.com/smallest-pixel-7.font) an
 
 You might find if you need to fit a longer word in that you can easily squish up some of the letters, for example, snip off the end of an L or take a pixel's width out of the horizontal bars of an O.
 
-Now you've got your pattern, head to [Part two: The actual knitting](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-2) to learn how the pattern comes to life as a real, actual, physical entity.
+Now you've got your pattern, head to [Part two: The actual knitting](/2016/01/31/the-christmas-fam-scarf-part-2) to learn how the pattern comes to life as a real, actual, physical entity.

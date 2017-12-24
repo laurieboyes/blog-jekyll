@@ -10,11 +10,11 @@ tags:
 
 Welcome to part two of the tale of the Christmas fam scarf. The blog can be read in any order with no detriment to enjoyment. Here's a sum-up of each.
 
-[Part one: The intro and the pattern](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-1). Describes how the pixel pattern was created, taking through from photograph all the way to pixelated blob.
+[Part one: The intro and the pattern](/2015/12/24/the-christmas-fam-scarf-part-1). Describes how the pixel pattern was created, taking through from photograph all the way to pixelated blob.
 
 You're reading *Part two: The actual knitting*. This will be an account of what went into the actual knitting of the scarf, referencing some super helpful tutorials and putting them in the context of working from a pixel pattern.
 
-[Part three: ScarfParty - your solution to the pixel pattern problem](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-3) will gleefully describe the pattern tracking app I found I had to make to follow the pixel pattern for my much more complex fam faces.
+[Part three: ScarfParty - your solution to the pixel pattern problem](/2016/07/18/the-christmas-fam-scarf-part-3) will gleefully describe the pattern tracking app I found I had to make to follow the pixel pattern for my much more complex fam faces.
 
 ###The materials
 
@@ -84,7 +84,7 @@ The fact that our scarf is double-sided makes following the pattern a bit intere
  * **The direction of the pattern is reversed**
  * **The colours are reversed**
 
-Here's our pattern, which I knocked up in Pinta. (see [part one](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-1) for more detail on making pixel patterns). It's 10x10 and I was originally intending it to be an L for Laurie, but, as you can see, it looks more like a learner driver plate. 
+Here's our pattern, which I knocked up in Pinta. (see [part one](/2015/12/24/the-christmas-fam-scarf-part-1) for more detail on making pixel patterns). It's 10x10 and I was originally intending it to be an L for Laurie, but, as you can see, it looks more like a learner driver plate.
 
 ![L pattern](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/l-pattern.png)
 
@@ -118,4 +118,4 @@ The first several rows of my first attempt at the fam scarf, however, were enoug
 ![pattern on phone](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/phone-pixel-pattern.png)
 Oh god.
 
-It's for this reason that I invested time and enthusiasm in *ScarfParty*, my pixel pattern tracking web app. You can read all about the app, how it was made, and how you can use it for your own double-sided scarf projects in [the next exciting chapter of the tale of the Christmas fam scarf](http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-3).
+It's for this reason that I invested time and enthusiasm in *ScarfParty*, my pixel pattern tracking web app. You can read all about the app, how it was made, and how you can use it for your own double-sided scarf projects in [the next exciting chapter of the tale of the Christmas fam scarf](/2016/07/18/the-christmas-fam-scarf-part-3).

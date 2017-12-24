@@ -7,7 +7,7 @@ tags:
 - javascript
 ---
 
-Earlier this year I wrote _ScarfParty_, a knitting companion that centred around a dynamic pattern display that changed along with the knitter's progress. The pattern information was loaded in from a small black and white image. If you're interested, you can [learn more about my adventures with scarves](http://blog.lrnk.co.uk/tag/the-christmas-fam-scarf/).
+Earlier this year I wrote _ScarfParty_, a knitting companion that centred around a dynamic pattern display that changed along with the knitter's progress. The pattern information was loaded in from a small black and white image. If you're interested, you can [learn more about my adventures with scarves](/tags.html#the-christmas-fam-scarf).
 
 ![image mucking](http://static.lrnk.co.uk/blog-content/playing-with-image-data/image-mucking.png)
 
