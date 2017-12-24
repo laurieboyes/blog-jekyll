@@ -1,6 +1,9 @@
 .tag-title {
-  color: $tags-color;
   margin-bottom: 0;
+
+  a {
+    color: $tags-color;
+  }
 }
 .tagged-post {
   .title {
