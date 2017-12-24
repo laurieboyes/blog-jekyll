@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>The Christmas fam scarf | Part three: ScarfParty - your solution to the pixel pattern problem | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="Welcome to the eagerly-anticipated concluding chapter of the tale of the Christmas fam scarf! The series explores in excruciating detail the creation of the ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2016/07/18/the-christmas-fam-scarf-part-3.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">The Christmas fam scarf | Part three: ScarfParty - your solution to the pixel pattern problem</h1>
+    
+    <p class="meta">
+      July 18, 2016
+      
+    </p>
+  </header>
+  <section class="post-content"><p>Welcome to the eagerly-anticipated concluding chapter of the tale of the Christmas fam scarf! The series explores in excruciating detail the creation of the scarf I lovingly crafted for my brother and his girlfriend for Christmas 2015.</p>
+
+<p>This third and final post showcases the app I made to solve a crucial problem in the completion of the scarf.</p>
+
+<p>If you’re unsure of what a <em>pixel pattern</em> is, see <a href="http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-1">Part one: The intro and the pattern</a>.</p>
+
+<p>If you’re pretty much on-board with the concept of knitting your own complex, non-repeating scarf design but aren’t sure what problem I’m trying to solve here, see <a href="http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-2">Part two: The actual knitting</a>. The general gist is that once these pixel patterns reach a certain level of complexity they do become very hard to follow, which is exactly why I made this:</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/scarf-party-demo.gif" alt="scarf party demo" /></p>
+
+<p>#####Use the app for your own pixel pattern: <a href="http://static.lrnk.co.uk/scarfparty2/">ScarfParty</a>
+<span class="paragraph-space-forcer"></span></p>
+
+<p>#####Check out the code: <a href="https://github.com/laurieboyes/scarfparty-v2">github.com/laurieboyes/scarfparty-v2</a>
+<span class="paragraph-space-forcer"></span></p>
+
+<p>The grid is a dynamic display of the pattern that updates along with your progress. Each square in the grid represents a single stitch. Regardless of your position in the scarf or what side you’re on, the pattern is always read from right to left, and the stitches are always displayed in the colours you need to knit. This is achieved by flipping the colours and design at the end of each row, presenting the pattern similarly to in the demonstration at the end of <a href="http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-2">part 2 of this series</a>.</p>
+
+<p>This leaves the knitter with ample mental bandwidth remaining to siphon off into conversation or podcast consumption, and frees them from the anguish of constantly feeling the need to recount theirs rows and stitches. Phew!</p>
+
+<p>###Special features</p>
+
+<p>The pattern is generated directly from a small black-and-white image, just like the one we end up with as a result of following through the pattern creation guide in <a href="http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-1">part 1</a>. This means we can swap in new versions of our pattern effortlessly (for the bits we haven’t already knitted!) as we work out the finer points of our project. Beat that, graph paper.</p>
+
+<p>A number of special features are baked in:</p>
+
+<ul>
+  <li><strong>Fully-reponsive mobile-first design</strong></li>
+</ul>
+
+<p><span style="padding-left:2.5em; display:block">Knit in the pub! (Provided you can overcome the burning self-consciousness I find usually comes with knitting in public).</span></p>
+
+<ul>
+  <li><strong>Save your progress</strong></li>
+</ul>
+
+<p><span style="padding-left:2.5em; display:block">Pattern and progress info is automatically saved to your device’s HTML5 local storage, allowing everything to be kept up to date and running smoothly without requiring a constant internet connection (Knit on the train!).</span></p>
+
+<ul>
+  <li><strong>Custom colours</strong></li>
+</ul>
+
+<p><span style="padding-left:2.5em; display:block">Change the colour display to match your own pattern.</span></p>
+
+<ul>
+  <li><strong>Custom stitch increment</strong></li>
+</ul>
+
+<p><span style="padding-left:2.5em; display:block">Make your own choice about how often you want to let ScarfParty know you’ve done a chunk of stitches.</span></p>
+
+<ul>
+  <li><strong>Stitch markers (experimental)</strong></li>
+</ul>
+
+<p><span style="padding-left:2.5em; display:block">Knitting something bigger, like a blanket? Put stitch markers in the pattern to make it easier to keep track of where you are in a single row.</span></p>
+
+<p>ScarfParty is written in ES2015, and makes use of <a href="https://github.com/Financial-Times/origami-build-tools">Origami Build Tools</a> and the <a href="https://cdn.polyfill.io/">polyfill service</a>, both of which are developed and maintained by the good people at the Financial Times.</p>
+
+<p>There were a lot of fun problems to solve here, some of which will bubble up as their own little blog posts.</p>
+
+<p>This was easily my favourite knitting project to date and ranks pretty highly on my list of favourite side projects. I’d be genuinely astounded and amazed if anyone else were to pick up this blog series and have a go at creating their own pixel-pattern project, but if anyone does, please tweet me!</p>
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#knitting">#knitting</a>
+    
+    <a class="tag" href="/tags#javascript">#javascript</a>
+    
+    <a class="tag" href="/tags#the-christmas-fam-scarf">#the-christmas-fam-scarf</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Mucking about with image data in JavaScript | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="Earlier this year I wrote ScarfParty, a knitting companion that centred around a dynamic pattern display that changed along with the knitter’s progress. The ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2016/07/24/mucking-about-with-image-data-in-javascript.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Mucking about with image data in JavaScript</h1>
+    
+    <p class="meta">
+      July 24, 2016
+      
+    </p>
+  </header>
+  <section class="post-content"><p>Earlier this year I wrote <em>ScarfParty</em>, a knitting companion that centred around a dynamic pattern display that changed along with the knitter’s progress. The pattern information was loaded in from a small black and white image. If you’re interested, you can <a href="http://blog.lrnk.co.uk/tag/the-christmas-fam-scarf/">learn more about my adventures with scarves</a>.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/playing-with-image-data/image-mucking.png" alt="image mucking" /></p>
+
+<p>This post is about the code behind taking in that image and regurgitating it in a different form that I could play around with.</p>
+
+<p><em>All the code referenced in this post:</em> <a href="https://github.com/laurieboyes/scarfparty-v2/blob/master/src/pattern.js">github.com/laurieboyes/scarfparty-v2/blob/master/src/pattern.js</a></p>
+
+<p><em>And the tests:</em> <a href="https://github.com/laurieboyes/scarfparty-v2/blob/master/test/tests/pattern.spec.js">github.com/laurieboyes/scarfparty-v2/blob/master/test/tests/pattern.spec.js</a></p>
+
+<p>####Reading the image</p>
+
+<p>Problem number one was to get the information out of the image with JavaScript.</p>
+
+<p>I hadn’t a clue how this would happen or whether there’d even be an API for it but I had one if those googling eureka moments when I came across the technique of drawing an image to a canvas and interrogating the canvas for the information using <code class="highlighter-rouge">ctx.getImageData</code> (<a href="http://stackoverflow.com/a/17789253/1841845">I think it was this StackOverflow answer</a>). Neat.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param img
+ * @returns {Array} array of integers representing the image, 
+ * wherein each pixel is represented by a group of 4 numbers
+ * between 0 and 255 corresponding to its rgba values
+ */</span>
+<span class="kd">function</span> <span class="nx">getImageData</span><span class="p">(</span><span class="nx">img</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//Create a canvas in memory that we can use to get the pattern image data</span>
+    <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">img</span><span class="p">.</span><span class="nx">naturalWidth</span><span class="p">;</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">img</span><span class="p">.</span><span class="nx">naturalHeight</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">getImageData</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">img</span><span class="p">.</span><span class="nx">naturalWidth</span><span class="p">,</span> <span class="nx">img</span><span class="p">.</span><span class="nx">naturalHeight</span><span class="p">).</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><span class="paragraph-space-forcer"></span>
+For example, when passed this <em>very</em> small image 3 x 2 pixels in size:</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/playing-with-image-data/tiny-image.png" alt="image mucking" /></p>
+
+<p>My <code class="highlighter-rouge">getImageData</code> function returns the following array:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
+</code></pre></div></div>
+<p><span class="paragraph-space-forcer"></span></p>
+
+<p>Broken down into pixels, we can see that each is represented by its 4-number rgba value</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+ <span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">255</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">255</span><span class="p">,</span>
+
+ <span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span>   <span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span>   <span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><span class="paragraph-space-forcer"></span>
+####Translating the image data</p>
+
+<p>I needed to turn this flat array of information into something meaningful and easy to use to recreate the image. All I really needed to know was which pixels were black and which were white, so I wrote this small function to take the results of the above and turn them into a flat array of 1s and 0s.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param imageData
+ * @returns {Array} array of 1s and 0s, one element for each pixel in the pattern, read one row at a time from left to
+ * right. A value of 1 represents that the pixel is the dark colour and 0 that it is light
+ */</span>
+<span class="kd">function</span> <span class="nx">getPixelsOnOff</span><span class="p">(</span><span class="nx">imageData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">imageData</span>
+
+        <span class="c1">// only have to look at one colour channel to know if it's black or white, so just look at the red of each</span>
+        <span class="c1">// pixel, filtering the rest out</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1">// if the value is greater than 127 (~half of the maximum of 255) it's light, else it's dark</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">pixel</span> <span class="o">=&gt;</span> <span class="nx">pixel</span> <span class="o">&gt;</span> <span class="mi">127</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><span class="paragraph-space-forcer"></span>
+When passed the array resulting from the <code class="highlighter-rouge">getImageData</code> function call above, the <code class="highlighter-rouge">getPixelsOnOff</code> function returns this array:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0,1,1,0,0,0]
+</code></pre></div></div>
+<p><span class="paragraph-space-forcer"></span></p>
+
+<p>The final step was to group the array into rows, all set to be visualised. As we know the image dimensions from the image itself, this part is trivial.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+    [0,1,1],
+    [0,0,0]
+]
+</code></pre></div></div>
+<p><span class="paragraph-space-forcer"></span></p>
+
+<p>And there we have it! We now have an easy to read array of the on/off state of each pixel, grouped into rows, which we can use to redisplay the image in any way we choose. In my case this basically involved looping over the nested arrays and drawing squares on a canvas with the appropriate position and colour.</p>
+
+<p>####Controversial choices</p>
+
+<p>My flatmate, peering over my shoulder, has just pointed out that returning 1s and 0s rather than booleans is a bit of a code smell. My best guess as to why I didn’t think of this myself at the time is that doing it this way made my test cases look nicer:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// if you squint you can almost see it</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">pattern</span><span class="p">.</span><span class="nx">rows</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">equal</span><span class="p">([</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]);</span>
+</code></pre></div></div>
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#javascript">#javascript</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

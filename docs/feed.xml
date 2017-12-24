@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laurie Boyes codes and sometimes knits</title>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>https://laurieboyes.github.io/blog-jekyll//</link>
+    <atom:link href="/blog-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://laurieboyes.github.io/blog-jekyll/</link>
     <description>knitting javascript developer software web</description>
-    <pubDate>Sun, 24 Dec 2017 23:13:35 +0000</pubDate>
+    <pubDate>Sun, 24 Dec 2017 23:21:05 +0000</pubDate>
     
       <item>
         <title>Constructive sloppiness</title>
-        <link>/2017/10/02/constructive-sloppiness.html</link>
-        <guid isPermaLink="true">/2017/10/02/constructive-sloppiness.html</guid>
+        <link>/blog-jekyll/2017/10/02/constructive-sloppiness.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2017/10/02/constructive-sloppiness.html</guid>
         <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tl;dr&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The other week, I took part in the FT’s annual internal hackathon. My team and I decided to play with our idea of bringing video-game-style ‘achievements’ into FT.com, with the aim of encouraging exploration and discovery of the site. It was great fun! Check it out:&lt;/p&gt;
@@ -94,8 +94,8 @@
     
       <item>
         <title>Making my pop's site responsive</title>
-        <link>/2016/10/16/making-my-pops-site-responsive.html</link>
-        <guid isPermaLink="true">/2016/10/16/making-my-pops-site-responsive.html</guid>
+        <link>/blog-jekyll/2016/10/16/making-my-pops-site-responsive.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/10/16/making-my-pops-site-responsive.html</guid>
         <description>&lt;p&gt;My dad heads up a company called &lt;a href=&quot;http://www.able-governance.co.uk/&quot;&gt;Able Governance&lt;/a&gt;, which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what their offering actually involves, they wanted to make their website mobile friendly, and I was more than happy to help out.&lt;/p&gt;
 
 &lt;p&gt;Here I’ve detailed a selection of the changes I made to make it so.&lt;/p&gt;
@@ -219,8 +219,8 @@
     
       <item>
         <title>Adventures with Neo4j and Timetrees</title>
-        <link>/2016/10/04/adventures-with-neo4j-and-timetrees.html</link>
-        <guid isPermaLink="true">/2016/10/04/adventures-with-neo4j-and-timetrees.html</guid>
+        <link>/blog-jekyll/2016/10/04/adventures-with-neo4j-and-timetrees.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/10/04/adventures-with-neo4j-and-timetrees.html</guid>
         <description>&lt;p&gt;Today a blog post I wrote was published on the Financial Times’ Engine Room blog. It’s about how my team and I handle time-based queries in our Neo4j graph database.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://engineroom.ft.com/2016/10/04/adventures-with-neo4j-and-timetrees/&quot;&gt;Here it is!&lt;/a&gt;&lt;/p&gt;
@@ -232,8 +232,8 @@
     
       <item>
         <title>Beneath this cool, calm exterior</title>
-        <link>/2016/08/10/beneath-this-cool-calm-exterior.html</link>
-        <guid isPermaLink="true">/2016/08/10/beneath-this-cool-calm-exterior.html</guid>
+        <link>/blog-jekyll/2016/08/10/beneath-this-cool-calm-exterior.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/08/10/beneath-this-cool-calm-exterior.html</guid>
         <description>&lt;p&gt;In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the &lt;a href=&quot;http://ludumdare.com/compo/&quot;&gt;Ludum Dare 48-hour game competition&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My entry was, uh, pretty weird. The theme, announced at the very start of the 48-hour window late on the Friday evening, was &lt;em&gt;Beneath the surface&lt;/em&gt;. Many people entered underwater themed games, or mining games. I decided that my game would take a look &lt;em&gt;beneath the surface&lt;/em&gt; of  my own fragile outward calm.&lt;/p&gt;
@@ -293,8 +293,8 @@ The heavy lifting in the code was done by a 2D game library called &lt;a href=&q
     
       <item>
         <title>Mucking about with image data in JavaScript</title>
-        <link>/2016/07/24/mucking-about-with-image-data-in-javascript.html</link>
-        <guid isPermaLink="true">/2016/07/24/mucking-about-with-image-data-in-javascript.html</guid>
+        <link>/blog-jekyll/2016/07/24/mucking-about-with-image-data-in-javascript.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/07/24/mucking-about-with-image-data-in-javascript.html</guid>
         <description>&lt;p&gt;Earlier this year I wrote &lt;em&gt;ScarfParty&lt;/em&gt;, a knitting companion that centred around a dynamic pattern display that changed along with the knitter’s progress. The pattern information was loaded in from a small black and white image. If you’re interested, you can &lt;a href=&quot;http://blog.lrnk.co.uk/tag/the-christmas-fam-scarf/&quot;&gt;learn more about my adventures with scarves&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://static.lrnk.co.uk/blog-content/playing-with-image-data/image-mucking.png&quot; alt=&quot;image mucking&quot; /&gt;&lt;/p&gt;
@@ -411,8 +411,8 @@ When passed the array resulting from the &lt;code class=&quot;highlighter-rouge&
     
       <item>
         <title>The Christmas fam scarf | Part three: ScarfParty - your solution to the pixel pattern problem</title>
-        <link>/2016/07/18/the-christmas-fam-scarf-part-3.html</link>
-        <guid isPermaLink="true">/2016/07/18/the-christmas-fam-scarf-part-3.html</guid>
+        <link>/blog-jekyll/2016/07/18/the-christmas-fam-scarf-part-3.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/07/18/the-christmas-fam-scarf-part-3.html</guid>
         <description>&lt;p&gt;Welcome to the eagerly-anticipated concluding chapter of the tale of the Christmas fam scarf! The series explores in excruciating detail the creation of the scarf I lovingly crafted for my brother and his girlfriend for Christmas 2015.&lt;/p&gt;
 
 &lt;p&gt;This third and final post showcases the app I made to solve a crucial problem in the completion of the scarf.&lt;/p&gt;
@@ -480,8 +480,8 @@ When passed the array resulting from the &lt;code class=&quot;highlighter-rouge&
     
       <item>
         <title>The Christmas fam scarf | Part two: The actual knitting</title>
-        <link>/2016/01/31/the-christmas-fam-scarf-part-2.html</link>
-        <guid isPermaLink="true">/2016/01/31/the-christmas-fam-scarf-part-2.html</guid>
+        <link>/blog-jekyll/2016/01/31/the-christmas-fam-scarf-part-2.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2016/01/31/the-christmas-fam-scarf-part-2.html</guid>
         <description>&lt;p&gt;Welcome to part two of the tale of the Christmas fam scarf. The blog can be read in any order with no detriment to enjoyment. Here’s a sum-up of each.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://blog.lrnk.co.uk/the-christmas-fam-scarf-part-1&quot;&gt;Part one: The intro and the pattern&lt;/a&gt;. Describes how the pixel pattern was created, taking through from photograph all the way to pixelated blob.&lt;/p&gt;
@@ -601,8 +601,8 @@ Oh god.&lt;/p&gt;
     
       <item>
         <title>The Christmas fam scarf | Part one: The intro and the pattern</title>
-        <link>/2015/12/24/the-christmas-fam-scarf-part-1.html</link>
-        <guid isPermaLink="true">/2015/12/24/the-christmas-fam-scarf-part-1.html</guid>
+        <link>/blog-jekyll/2015/12/24/the-christmas-fam-scarf-part-1.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2015/12/24/the-christmas-fam-scarf-part-1.html</guid>
         <description>&lt;p&gt;Ho ho ho! Merry Christmas everyone! It’s Christmas 2015 and my brother and his girlfriend are soon to unwrap what I hope is the most alarming yet heartwarming gift they’ve ever received: Their very own double-sided, two-colour Christmas fam scarf.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/famscarffinished.jpg&quot; alt=&quot;fam scarf in progress&quot; /&gt;&lt;/p&gt;
@@ -735,8 +735,8 @@ Trippy.&lt;/p&gt;
     
       <item>
         <title>Self esteem snake</title>
-        <link>/2015/12/23/self-esteem-snake.html</link>
-        <guid isPermaLink="true">/2015/12/23/self-esteem-snake.html</guid>
+        <link>/blog-jekyll/2015/12/23/self-esteem-snake.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2015/12/23/self-esteem-snake.html</guid>
         <description>&lt;p&gt;In August 2013 I embarked on another new game project in my then-favourite language Java. Heartened by the knowledge that everyone loves a good classic game clone, I decide to write my own rendition of &lt;a href=&quot;https://en.wikipedia.org/wiki/Snake_(video_game)&quot;&gt;Snake&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://static.lrnk.co.uk/blog-content/lrnksnake.gif&quot; alt=&quot;lrnk snake&quot; /&gt;&lt;/p&gt;
@@ -766,8 +766,8 @@ Trippy.&lt;/p&gt;
     
       <item>
         <title>Little Green Men</title>
-        <link>/2015/12/20/little-green-men.html</link>
-        <guid isPermaLink="true">/2015/12/20/little-green-men.html</guid>
+        <link>/blog-jekyll/2015/12/20/little-green-men.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2015/12/20/little-green-men.html</guid>
         <description>&lt;p&gt;In June 2012 I’d just finished my degree and, having not yet given up hope of taking the indie gaming scene by storm, embarked on another game project. I decided I’d write a platform game, and that I’d write it using JavaScript and HTML5 canvas.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://static.lrnk.co.uk/blog-content/littlegreenmen-walkshoot.gif&quot; alt=&quot;lrnce tetris&quot; /&gt;&lt;/p&gt;
@@ -791,8 +791,8 @@ Trippy.&lt;/p&gt;
     
       <item>
         <title>Tetris for egotistical Java fledglings</title>
-        <link>/2015/11/24/tetris-for-egotistical-java-fledglings.html</link>
-        <guid isPermaLink="true">/2015/11/24/tetris-for-egotistical-java-fledglings.html</guid>
+        <link>/blog-jekyll/2015/11/24/tetris-for-egotistical-java-fledglings.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2015/11/24/tetris-for-egotistical-java-fledglings.html</guid>
         <description>&lt;p&gt;&lt;em&gt;LrnceTetris&lt;/em&gt; is a game I wrote in April 2010, just at the tail end of the second year of my Comp Sci degree (an explanation of the name ‘Lrnce’ and its derivatives is a whole other blog post). It’s not the first in its category of did-all-the-fun-stuff-then-got-bored hobby coding projects I’ve worked on over the years but it is the first I’m willing to exhibit with only a slight accompanying cringe.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://static.lrnk.co.uk/blog-content/lrncetetris.gif&quot; alt=&quot;lrnce tetris&quot; /&gt;&lt;/p&gt;
@@ -815,8 +815,8 @@ Trippy.&lt;/p&gt;
     
       <item>
         <title>My new blog</title>
-        <link>/2015/11/19/my-new-blog.html</link>
-        <guid isPermaLink="true">/2015/11/19/my-new-blog.html</guid>
+        <link>/blog-jekyll/2015/11/19/my-new-blog.html</link>
+        <guid isPermaLink="true">/blog-jekyll/2015/11/19/my-new-blog.html</guid>
         <description>&lt;p&gt;Welcome to my first post!&lt;/p&gt;
 
 &lt;p&gt;I’ve made a decision to rework my personal website into a blog format, moving away from the old bullet-pointed-list-in-a-bootstrap-template style into a much more palatable experience for all.&lt;/p&gt;

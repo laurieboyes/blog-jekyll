@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Beneath this cool, calm exterior | Laurie Boyes codes and sometimes knits</title>
+	<meta name="description" content="In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the Ludum Dare 48-hour...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2016/08/10/beneath-this-cool-calm-exterior.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Laurie Boyes codes and sometimes knits" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/e7d2c83b29f800e81a82686df380fe41?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Laurie Boyes codes and sometimes knits</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/laurieboyes" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/LaurieBoyes" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Beneath this cool, calm exterior</h1>
+    
+    <p class="meta">
+      August 10, 2016
+      
+    </p>
+  </header>
+  <section class="post-content"><p>In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the <a href="http://ludumdare.com/compo/">Ludum Dare 48-hour game competition</a>.</p>
+
+<p>My entry was, uh, pretty weird. The theme, announced at the very start of the 48-hour window late on the Friday evening, was <em>Beneath the surface</em>. Many people entered underwater themed games, or mining games. I decided that my game would take a look <em>beneath the surface</em> of  my own fragile outward calm.</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/beneath-this-cool-calm.gif" alt="gameplay gif" /></p>
+
+<p>#####Play the game: <a href="http://static.lrnk.co.uk/ludumdare29/">Beneath this cool, calm exterior</a>
+<em>Move: wasd</em><br /> 
+<em>Shoot: arrow keys</em><br />
+<em>Start, next level: space bar</em></p>
+
+<p>#####View the code: <a href="https://github.com/laurieboyes/beneath-this-cool-calm-exterior">github.com/laurieboyes/beneath-this-cool-calm-exterior</a>
+<span class="paragraph-space-forcer"></span></p>
+
+<p>#####View the competition entry: <a href="http://ludumdare.com/compo/ludum-dare-29/?action=preview&amp;uid=6545">Ludum Dare</a>
+<span class="paragraph-space-forcer"></span></p>
+
+<p>Fundamentally, it’s a very basic shooter game. The enemies are my insecurities, and some of them spout fun exaggerations on my own internal monologue. When a player collides with an insecurity, they are presented with a picture of my face, moving through an array of increasingly distressed expressions.</p>
+
+<p>Did I win? No! Of course not. But I was pretty happy with my results. Competing against a not insignificant 2495 entries, I came in 14th place for humour (putting me in the top 1 percent!), 98th for theme, and… less good for everything else:</p>
+
+<p><img src="http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/results.png" alt="results" /></p>
+
+<p>###The making of
+The heavy lifting in the code was done by a 2D game library called <a href="http://melonjs.org/">melonJS</a>. It was very nice to work with and I’d use it again.</p>
+
+<p>####Bom bom bom bom</p>
+
+<p>The rules of the competition state that all assets (e.g. graphics and sound) must be created within the 48-hour window. I did all the sound effects on <a href="http://www.bfxr.net/">bfxr</a>, and the music with my own mouth. Sadly, I didn’t get around to putting in a mute button for the music, but I think the sense of agitation it evokes after about 8 seconds of listening really contributes to the overall feel.</p>
+
+<p>####Making it better</p>
+
+<p>My flatmate, true to form, looked up from his own entry to peer over my shoulder and then put me onto a ridiculously good presentation by <a href="http://www.vlambeer.com/">Vlambeer</a> about improving the ‘game feel’ (although that’s a term they contest).</p>
+
+<p>It came with an interactive demo, which sadly seems to have disappeared, but the talk it accompanied survives and is great: <a href="https://www.youtube.com/watch?v=AJdEqssNZ-U">Jan Willem Nijman - Vlambeer - ‘The art of screenshake’</a>.</p>
+
+<p>The talk is filled to bursting with rich wisdom nuggets, but with my short time allowance, I chose to implement a just few of the improvements I thought would be most effective:</p>
+
+<ul>
+  <li>Upping the shoot frequency</li>
+  <li>Upping the bullet size</li>
+  <li>Adding some screen shake</li>
+</ul>
+
+<p>The astonishing difference these small changes can make is hard to believe without watching that talk but you get some of the effect in these before and after gifs.</p>
+
+<p>Pre tweak:
+<img src="http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/beneath-old.gif" alt="before-tweak" /></p>
+
+<p>Post tweak:
+<img src="http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/beneath-new.gif" alt="after-tweak" /></p>
+
+<p>In conclusion, this was my first timeboxed game/code jam and I enjoyed it a lot and will absolutely commit doing it or something similar again one of these days.</p>
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#javascript">#javascript</a>
+    
+    <a class="tag" href="/tags#games">#games</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Laurie Boyes codes and sometimes knits © 2018. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
