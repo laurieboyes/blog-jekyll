@@ -3,6 +3,7 @@ layout: post
 title: Constructive sloppiness
 image: "/content/images/2017/09/lol.svg"
 date: '2017-10-02 06:51:34'
+excerpt: <p>For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.</p>
 tags:
 - javascript
 - web
