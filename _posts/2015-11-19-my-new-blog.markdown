@@ -2,6 +2,7 @@
 layout: post
 title: My new blog
 date: '2015-11-19 20:02:54'
+alias: /my-new-blog
 ---
 
 Welcome to my first post!

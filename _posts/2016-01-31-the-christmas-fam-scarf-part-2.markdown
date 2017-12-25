@@ -6,6 +6,7 @@ date: '2016-01-31 21:45:00'
 tags:
 - knitting
 - the-christmas-fam-scarf
+alias: /the-christmas-fam-scarf-part-2
 ---
 
 Welcome to part two of the tale of the Christmas fam scarf. The blog can be read in any order with no detriment to enjoyment. Here's a sum-up of each.

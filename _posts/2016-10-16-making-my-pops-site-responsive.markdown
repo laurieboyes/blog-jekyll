@@ -6,6 +6,7 @@ date: '2016-10-16 10:25:59'
 tags:
 - javascript
 - web
+alias: /making-my-pops-site-responsive
 ---
 
 My dad heads up a company called [Able Governance](http://www.able-governance.co.uk/), which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what their offering actually involves, they wanted to make their website mobile friendly, and I was more than happy to help out.

@@ -6,6 +6,7 @@ date: '2016-10-04 20:36:12'
 tags:
 - neo4j
 - the-ft
+alias: /adventures-with-neo4j-and-timetrees
 ---
 
 Today a blog post I wrote was published on the Financial Times' Engine Room blog. It's about how my team and I handle time-based queries in our Neo4j graph database.

@@ -6,6 +6,7 @@ date: '2015-12-24 16:47:00'
 tags:
 - knitting
 - the-christmas-fam-scarf
+alias: /the-christmas-fam-scarf-part-1
 ---
 
 Ho ho ho! Merry Christmas everyone! It's Christmas 2015 and my brother and his girlfriend are soon to unwrap what I hope is the most alarming yet heartwarming gift they've ever received: Their very own double-sided, two-colour Christmas fam scarf.

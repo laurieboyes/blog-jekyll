@@ -6,6 +6,7 @@ date: '2016-08-10 20:36:00'
 tags:
 - javascript
 - games
+alias: /beneath-this-cool-calm-exterior
 ---
 
 In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the [Ludum Dare 48-hour game competition](http://ludumdare.com/compo/).

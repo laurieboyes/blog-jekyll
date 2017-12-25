@@ -6,6 +6,7 @@ date: '2015-12-20 17:06:17'
 tags:
 - javascript
 - games
+alias: /little-green-men
 ---
 
 In June 2012 I'd just finished my degree and, having not yet given up hope of taking the indie gaming scene by storm, embarked on another game project. I decided I'd write a platform game, and that I'd write it using JavaScript and HTML5 canvas.

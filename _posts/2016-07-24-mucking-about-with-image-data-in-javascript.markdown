@@ -5,6 +5,7 @@ image: "/content/images/2016/07/Screen-Shot-2016-07-24-at-00-28-42.png"
 date: '2016-07-24 09:42:05'
 tags:
 - javascript
+alias: /mucking-about-with-image-data-in-javascript
 ---
 
 Earlier this year I wrote _ScarfParty_, a knitting companion that centred around a dynamic pattern display that changed along with the knitter's progress. The pattern information was loaded in from a small black and white image. If you're interested, you can [learn more about my adventures with scarves](/tags.html#the-christmas-fam-scarf).

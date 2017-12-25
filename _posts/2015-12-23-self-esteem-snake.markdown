@@ -6,6 +6,7 @@ date: '2015-12-23 23:22:00'
 tags:
 - java
 - games
+alias: /self-esteem-snake
 ---
 
 In August 2013 I embarked on another new game project in my then-favourite language Java. Heartened by the knowledge that everyone loves a good classic game clone, I decide to write my own rendition of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game)).

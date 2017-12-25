@@ -8,6 +8,7 @@ tags:
 - javascript
 - web
 - the-ft
+alias: /constructive-sloppiness
 ---
 
 ***Tl;dr*** *For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.*

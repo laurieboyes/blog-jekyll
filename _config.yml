@@ -8,6 +8,7 @@ theme_settings:
   favicon: assets/favicon.ico
   gravatar: e7d2c83b29f800e81a82686df380fe41
   description: "knitting javascript developer software web" # used by search engines
+  safe: false
 
   # Header and footer text
   header_text: >
