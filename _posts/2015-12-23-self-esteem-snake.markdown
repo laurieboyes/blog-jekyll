@@ -12,11 +12,11 @@ In August 2013 I embarked on another new game project in my then-favourite langu
 
 ![lrnk snake](http://static.lrnk.co.uk/blog-content/lrnksnake.gif)
 
-#####Download the game: [SelfEsteemSnake-1.1-beta.jar](https://github.com/laurieboyes/self-esteem-snake/releases/download/v1.1-beta/SelfEsteemSnake-1.1-beta.jar)
+##### Download the game: [SelfEsteemSnake-1.1-beta.jar](https://github.com/laurieboyes/self-esteem-snake/releases/download/v1.1-beta/SelfEsteemSnake-1.1-beta.jar)
 *Menu - arrow keys to select, return to confirm*<br/>
 *Game - arrow keys to move, p to pause*
 
-#####View the code: [github.com/laurieboyes/self-esteem-snake](https://github.com/laurieboyes/self-esteem-snake)
+##### View the code: [github.com/laurieboyes/self-esteem-snake](https://github.com/laurieboyes/self-esteem-snake)
 <span class="paragraph-space-forcer"></span>
 
 As well as giving me one more shiny thing to put on my personal website, this project was contrived to help me learn [Git](https://git-scm.com/) (imagine the mess in a world without Git!) and to take a small chip out of the looming monolith that was my [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) by finally giving me a solid, first-hand understanding of working with [Test-driven Development](https://en.wikipedia.org/wiki/Test-driven_development).

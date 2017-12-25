@@ -12,7 +12,7 @@ tags:
 
 ![lrnce tetris](http://static.lrnk.co.uk/blog-content/lrncetetris.gif)
 
-#####Download the game: [LrnceTetris.jar](http://static.lrnk.co.uk/LrnceTetris.jar)
+##### Download the game: [LrnceTetris.jar](http://static.lrnk.co.uk/LrnceTetris.jar)
 <span class="paragraph-space-forcer"></span>
 
 The premise of the game is... Tetris! Of course. It's a Tetris clone. What budding games programmer hasn't seen appeal in Tetris's simple action, it's easy art, it's instant familiarity. There's something about creating your own version of a game you've previously consumed with unblinking glee that really makes a project exciting.

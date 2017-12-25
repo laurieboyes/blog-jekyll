@@ -20,17 +20,17 @@ If you're pretty much on-board with the concept of knitting your own complex, no
 
 ![scarf party demo](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/scarf-party-demo.gif)
 
-#####Use the app for your own pixel pattern: [ScarfParty](http://static.lrnk.co.uk/scarfparty2/)
+##### Use the app for your own pixel pattern: [ScarfParty](http://static.lrnk.co.uk/scarfparty2/)
 <span class="paragraph-space-forcer"></span>
 
-#####Check out the code: [github.com/laurieboyes/scarfparty-v2](https://github.com/laurieboyes/scarfparty-v2)
+##### Check out the code: [github.com/laurieboyes/scarfparty-v2](https://github.com/laurieboyes/scarfparty-v2)
 <span class="paragraph-space-forcer"></span>
 
 The grid is a dynamic display of the pattern that updates along with your progress. Each square in the grid represents a single stitch. Regardless of your position in the scarf or what side you're on, the pattern is always read from right to left, and the stitches are always displayed in the colours you need to knit. This is achieved by flipping the colours and design at the end of each row, presenting the pattern similarly to in the demonstration at the end of [part 2 of this series](/2016/01/31/the-christmas-fam-scarf-part-2).
 
 This leaves the knitter with ample mental bandwidth remaining to siphon off into conversation or podcast consumption, and frees them from the anguish of constantly feeling the need to recount theirs rows and stitches. Phew!
 
-###Special features
+### Special features
 
 The pattern is generated directly from a small black-and-white image, just like the one we end up with as a result of following through the pattern creation guide in [part 1](/2015/12/24/the-christmas-fam-scarf-part-1). This means we can swap in new versions of our pattern effortlessly (for the bits we haven't already knitted!) as we work out the finer points of our project. Beat that, graph paper.
 

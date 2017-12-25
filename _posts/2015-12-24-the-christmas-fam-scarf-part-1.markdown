@@ -12,7 +12,7 @@ Ho ho ho! Merry Christmas everyone! It's Christmas 2015 and my brother and his g
 
 ![fam scarf in progress](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/famscarffinished.jpg)
 
-###What's in the blog
+### What's in the blog
 
 Over the last three months, this scarf and I have been on a journey, from the apprehension of the knitting technique, to the creation of the pattern, then *ScarfParty*, the web app I wrote to track my pattern, and finally the actual knitting itself. It's the tale of this journey that I intend to recount in this festive three-part blog.
 
@@ -22,7 +22,7 @@ You're reading *Part one: The intro and the pattern*. Here you'll be charmed and
 
 [Part three: ScarfParty - your solution to the pixel pattern problem](/2016/07/18/the-christmas-fam-scarf-part-3) will showcase the app I've written and open-sourced for following these pixel patterns. If you do have a go at making your own pixel-pattern scarf, you'll soon realise just how necessary this is!
 
-###Right then, this pattern
+### Right then, this pattern
 
 Having undergone many iterations and complete rebirths from its first conception, here it is! Note that this image has been squished (see later), duplicated, and flipped for full effect.
 
@@ -30,7 +30,7 @@ Having undergone many iterations and complete rebirths from its first conception
 
 All members of the household, great and small, are represented here in loving detail. Each of the component images has been boiled down from a full-sized colour image using super easy colour manipulation. Each pixel represents a single stitch. Let's go through an example, making a new pattern from scratch.
 
-###To follow this tutorial, you will need: Some image editing software
+### To follow this tutorial, you will need: Some image editing software
 
 I found (with my choices limited on my Ubuntu machine) I had to use a variety of different image editing software to achieve all the necessary bits. You can use whatever you like  (unless you find yourself trapped on Ubuntu) but here's what I ended up on.
 
@@ -38,7 +38,7 @@ I used [Pinta](http://pinta-project.com/), Linux's answer to Paint.net, for most
 
 I used [Pixlr Editor](https://pixlr.com/editor/) for assembling the image onto the scarf. I have to put aside a lot of prejudice when I discover something's written in Flash, but this was the best thing I could find for filling the gaps in Pinta. Its brush tools are a bit laggy and its contrast function is a bit lightweight (this, as we will see, is a critical deficiency), but I was still pleased to find it.
 
-###Spec'ing out your scarf
+### Spec'ing out your scarf
 Before you start on your pattern, you need to think about how long and wide you want your scarf to be, and how many rows and stitches you need to achieve your desired dimensions. This will of course depend on your needles and your wool and all that. The great thing about this being a scarf is that it doesn't matter hugely how accurate you are with this. So long as you come out with something long enough to stretch to the circumference of your neck, you're laughing.
 
 For the fam scarf, I did a bit of googling on what makes a good scarf size and found most of the results indicated that pretty much anything goes, but my mum told me she understood that a good scarf length was 150cm and I got the impression 20cm was a good width for a fairly wide scarf, which appealed to me because I knew that the wider the scarf, the more recognisable the images would turn out.
@@ -46,7 +46,7 @@ For the fam scarf, I did a bit of googling on what makes a good scarf size and f
 I used aran/worsted weight wool and 4.5mm needles. I wouldn't necessarily follow this example if you think you've got a better idea, as my fam scarf is *heavy*, but it's certainly not a bad result. After making my little test duck (see [part two](/2016/01/31/the-christmas-fam-scarf-part-2)) I satisfied myself that my pattern wanted to be 30 stitches wide (not including the start and end stitches that form the border), and 300 rows long (again, not including the cast on and off). The final thing ended up being 21cm wide and 147cm high, so not too far wide of the mark.
 
 
-###Are you right there Father Ted?
+### Are you right there Father Ted?
 For the sake of variety I'll make the example from a screen cap of '90s sitcom [Father Ted](https://en.wikipedia.org/wiki/Father_Ted) that I hopefully won't get in trouble for using.
 
 ![fatherted1](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/fatherted1.jpg)
@@ -102,11 +102,11 @@ And here's what it looks like with the aspect ratio stretching reversed, giving 
 
 Magnificent.
 
-###Bonus features
+### Bonus features
 
 Here's a bit more info on some of the flourishes that went into the fam scarf.
 
-####The stripy background
+#### The stripy background
 I'm ashamed to say that I can't for the life of me remember where I found the repeating stripy zigzag pattern that made up the background for the fam scarf. If you recognise it as yours, tweet me and I'll credit you!
 
 I really like the way a repeating pattern like this draws the scarf into something more than just a creepy showcase of floating heads. I'm sure lots of things would work, but the stripe pattern was the first thing I tried and it ticked all the boxes for me. I found the easiest way to work with this in the pattern was as follows.
@@ -124,7 +124,7 @@ Paste in the face, and carve away at the background with the eraser to give it a
 ![zigzags6](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/zigzags6.png)
 Superb.
 
-####Adding text
+#### Adding text
 I only thought to add text to my scarf on my third and final attempt (my second attempt having been abandoned for unrelated reasons given above) and never have I found a more brilliant silver lining. I like the way it adds variety and I like its ability to remove all doubt about who your picture is supposed to represent. The sad thing is that it sort of takes further away from the reverse side of your finished product, as nothing says 'Don't look at this side' like backwards text. It's not a huge loss though, as I found the reverse side looks a bit weird anyway.
 
 ![reverse](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/reverse.jpg)

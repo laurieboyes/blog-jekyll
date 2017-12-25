@@ -17,7 +17,7 @@ _All the code referenced in this post:_ [github.com/laurieboyes/scarfparty-v2/bl
 
 _And the tests:_ [github.com/laurieboyes/scarfparty-v2/blob/master/test/tests/pattern.spec.js](https://github.com/laurieboyes/scarfparty-v2/blob/master/test/tests/pattern.spec.js)
 
-####Reading the image
+#### Reading the image
 
 Problem number one was to get the information out of the image with JavaScript.
 
@@ -64,7 +64,7 @@ Broken down into pixels, we can see that each is represented by its 4-number rgb
 ```
 
 <span class="paragraph-space-forcer"></span>
-####Translating the image data
+#### Translating the image data
 
 I needed to turn this flat array of information into something meaningful and easy to use to recreate the image. All I really needed to know was which pixels were black and which were white, so I wrote this small function to take the results of the above and turn them into a flat array of 1s and 0s.
 
@@ -104,7 +104,7 @@ The final step was to group the array into rows, all set to be visualised. As we
 
 And there we have it! We now have an easy to read array of the on/off state of each pixel, grouped into rows, which we can use to redisplay the image in any way we choose. In my case this basically involved looping over the nested arrays and drawing squares on a canvas with the appropriate position and colour.
 
-####Controversial choices
+#### Controversial choices
 
 My flatmate, peering over my shoulder, has just pointed out that returning 1s and 0s rather than booleans is a bit of a code smell. My best guess as to why I didn't think of this myself at the time is that doing it this way made my test cases look nicer:
 

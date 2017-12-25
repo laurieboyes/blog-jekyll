@@ -12,7 +12,7 @@ My dad heads up a company called [Able Governance](http://www.able-governance.co
 
 Here I've detailed a selection of the changes I made to make it so.
 
-###Enhance!
+### Enhance!
 
 First thing I did was stick in a viewport meta tag:
 ```
@@ -32,7 +32,7 @@ As far as my understanding goes, this means that at page load (before any user-i
 
 There's plenty more info about [viewport meta tags](https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag) on MDN.
 
-###Fat stacks
+### Fat stacks
 
 Most of the pages of the site have a sidebar with some jazzy links to other relevant pages. With our limited space on mobile devices, we needed the body content to occupy the full page width, and so the best thing for these links was for them to stack at the bottom.
 
@@ -80,7 +80,7 @@ And this on both (bonus gif):
 
 Hooray.
 
-###Navelucidation
+### Navelucidation
 
 So the existing navigation works great on desktop. It's your pretty standard styled list of links, some of which have submenus with additional links that reveal themselves on hover.
 
@@ -92,13 +92,13 @@ Additionally, the lack of hover state on a touch device meant that, to mobile us
 
 So, I did a quick google for mobile navigation patterns and found one that would solve these problems (and that I fancied implementing).
 
-####Step 1 - mobile first
+#### Step 1 - mobile first
 
 First I set up the list of top-level-menu links and styled it up similarly to the existing menu, the main exception being that each link would stack vertically and occupy 100% of the page width.
 
 ![menu squished](http://static.lrnk.co.uk/blog-content/popsite/menu-stacked-framed.png#mobile-framed)
 
-####Step 2 - digging deep
+#### Step 2 - digging deep
 
 I set up the sub nav in a similar way, except within the main links. I made an open/close toggle button that would change the height property of the top level link, effectively hiding and showing the submenu.
 
@@ -108,23 +108,23 @@ The animation is important, as it subtly provides valuable information for the u
 
 Upsettingly, transitioning from fixed height to auto height doesn't work with CSS transitions, so for a neat animation, you need to know exactly how high the menu should change to on expand. This isn't an insurmountable problem however, as we can work it out with a bit of javascript.
 
-####Step 3 - the big reveal
+#### Step 3 - the big reveal
 
 To save valuable mobile-device screen real estate, I collapsed the menu into an all-consuming 'menu' item, having it closed by default.  It was also important to animate this open and closed, which meant a bit more height querying, but this is no big deal. The menu is closed by default, meaning the user has to do less scrolling before getting to the content.
 
 ![menu squished](http://static.lrnk.co.uk/blog-content/popsite/menu-expanding-whole-framed.gif#mobile-framed)
 
-####Step 4 - you are here
+#### Step 4 - you are here
 
 I don't think navigation tools are all that useful if they can't tell you where you are in addition to where you can go. I made it so that on page load, the current menu item is highlighted to waypoint the current page, and, by necessity, that if the current page is within a submenu, that submenu is expanded on page load.
 
 ![menu highlighted](http://static.lrnk.co.uk/blog-content/popsite/menu-highlight-framed.png#mobile-framed)
 
-####Show me the codez 
+#### Show me the codez 
 
 Here's the code and a demo of the nav in a nice neat jsbin: http://jsbin.com/nidiyay/edit?html,css,js,output
 
-###That'll do it
+### That'll do it
 
 As always, there are still improvements that can be made, but for the interim I'm pretty pleased with it! Check it out on your own mobile-or-otherwise device at [able-governance.co.uk](http://www.able-governance.co.uk/), and, if you fancy it, maybe put in a query for pension scheme advice or something while you're there.
 

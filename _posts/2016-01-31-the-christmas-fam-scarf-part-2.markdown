@@ -16,7 +16,7 @@ You're reading *Part two: The actual knitting*. This will be an account of what 
 
 [Part three: ScarfParty - your solution to the pixel pattern problem](/2016/07/18/the-christmas-fam-scarf-part-3) will gleefully describe the pattern tracking app I found I had to make to follow the pixel pattern for my much more complex fam faces.
 
-###The materials
+### The materials
 
 For no reason other than that I had some left over from a previous project and had knitted my test duck in it, I used **aran/worsted weight wool** for my fam scarf. And, for no reason other than that my mum had lent me hers for another previous project, I used **4.5mm aluminium needles**.
 
@@ -29,28 +29,28 @@ Finally, you'll be grateful for a **tapestry needle** when you're tidying up you
 
 Due to the unscientific nature of my choices in this area, I'm not going to be very good at convincing you whether you should follow my example or learn from its errors. I *will* tell you that my scarf weighs 366g and that it's nice and thick and warm, which would be great [if we were ever going to have a winter in the UK again](http://www.bbc.co.uk/news/uk-35119311). It's about 7mm thick when it's not being stretched. Personally, I think it turned out great.
 
-###The techniques
+### The techniques
 
 This blog assumes a bit of experience with knitting, or at least familiarity with the concepts of the knit and purl stitches. Not loads though, this is only really my fourth vaguely serviceable project.
 
 The technique I used to make the scarf lie flat and look scarfy on both sides is called **double knitting** or **double-sided knitting**. This basically involves knitting the two sides at the same time, knitting together the edges and borrowing colour from the other side for the design. 
 
-####Recommended reading
+#### Recommended reading
 I had a go at making a video tutorial myself and it was just so awful. Happily, youTube is positively bustling with eager knitting tutors, and [this video by JoannesWeb](https://www.youtube.com/watch?v=JroP84tUmJA) absolutely smashes it. I actually learnt from a mishmash of various other videos and articles and only came across this one after my scarf was finished, but I think it's the best video I've found. Highly recommended if you're gearing up for your own double-sided scarf project.
 
 From [0:09](https://youtu.be/JroP84tUmJA?t=9s) to 0:54 she does a very nice cast on.
 From [0:56](https://youtu.be/JroP84tUmJA?t=56s) to 6:24 she demonstrates how to do the first three plain rows.
 At [8:48](https://youtu.be/JroP84tUmJA?t=8m48s) she shows how to bring in colour from the other side for creating designs.
 
-####Where I diverge/expand
+#### Where I diverge/expand
 There are a few things missing from the above video or things I did differently in the fam scarf that I wouldn't want you to miss out on.
 
-#####Casting on for your pixel pattern
+##### Casting on for your pixel pattern
 We want to cast on **two more stitches than the width of our pattern**, giving us enough stitches to fulfil the pattern itself, and two for each edge. A cast on for a pattern 10 stitches wide might look like this:
 
 ![cast on finished](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/cast-on.jpg)
 
-#####Alternative edges
+##### Alternative edges
 In the video, she starts and ends each row by knitting the double stitch (the light and the dark together) and never with a purl.
 
 I started off doing this and found it creates this sort of serrated edge on each side:
@@ -66,18 +66,18 @@ Another way of thinking about this is that you knit on the odd rows (the row cou
 
 ![L pattern A](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/edges.png)
 
-#####Changing yarns
+##### Changing yarns
 Just to save you some panicked googling when one or both of your first balls of yarn run out, here's [a video from KnitFreedom](https://www.youtube.com/watch?v=FodIHGHYBnM), which taught me how to change my yarn.
 
-#####The cast off
+##### The cast off
 I was pretty lazy with my cast off but it turned out fine. I just did a basic cast off, knitting the two stitches for each side together. So, following my cast-off approach for a ten-pixel-wide pattern, you'd cast off 12 stitches total. One for each of the edges, combining the yarns as per usual, and one for each pixel in the pattern, combining them to get both colours in the same stitch.
 
 ![L pattern A](http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/cast-off.jpg)
 
-#####Tidying up your loose ends
+##### Tidying up your loose ends
 Tidying up loose ends on a double knitted scarf is refreshingly easy. As we've sort of made a big, occasionally-connected pocket with our two sides, we can just use a tapestry needle to poke them into the middle. Magic.
 
-###Following the pixel pattern
+### Following the pixel pattern
 
 The fact that our scarf is double-sided makes following the pattern a bit interesting, and I'll go through an example here. The crucial factors are that, **at the end of every row**:
 
@@ -104,7 +104,7 @@ The fifth and sixth row get a bit more interesting, as these are the first rows 
 
 And that's pretty much it! Obviously, rows seven and eight are identical to five and six respectively, and rows nine and ten mirror the first two. Cast it off, tidy in the ends, stick it on your toy car and admire a job well done.
 
-#####Trickier patterns
+##### Trickier patterns
 
 For simple patterns, visualising this stuff mentally is easy enough. I got all the way through my test duck quite happily, and was even *just about* smiling as I worked my way through my knitted QR code experiment:
 

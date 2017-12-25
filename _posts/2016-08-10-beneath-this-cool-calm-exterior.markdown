@@ -14,15 +14,15 @@ My entry was, uh, pretty weird. The theme, announced at the very start of the 48
 
 ![gameplay gif](http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/beneath-this-cool-calm.gif)
 
-#####Play the game: [Beneath this cool, calm exterior](http://static.lrnk.co.uk/ludumdare29/)
+##### Play the game: [Beneath this cool, calm exterior](http://static.lrnk.co.uk/ludumdare29/)
 *Move: wasd*<br/> 
 *Shoot: arrow keys*<br/>
 *Start, next level: space bar*
 
-#####View the code: [github.com/laurieboyes/beneath-this-cool-calm-exterior](https://github.com/laurieboyes/beneath-this-cool-calm-exterior)
+##### View the code: [github.com/laurieboyes/beneath-this-cool-calm-exterior](https://github.com/laurieboyes/beneath-this-cool-calm-exterior)
 <span class="paragraph-space-forcer"></span>
 
-#####View the competition entry: [Ludum Dare](http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=6545)
+##### View the competition entry: [Ludum Dare](http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=6545)
 <span class="paragraph-space-forcer"></span>
 
 Fundamentally, it's a very basic shooter game. The enemies are my insecurities, and some of them spout fun exaggerations on my own internal monologue. When a player collides with an insecurity, they are presented with a picture of my face, moving through an array of increasingly distressed expressions.
@@ -31,14 +31,14 @@ Did I win? No! Of course not. But I was pretty happy with my results. Competing 
 
 ![results](http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/results.png)
 
-###The making of
+### The making of
 The heavy lifting in the code was done by a 2D game library called [melonJS](http://melonjs.org/). It was very nice to work with and I'd use it again.
 
-####Bom bom bom bom
+#### Bom bom bom bom
 
 The rules of the competition state that all assets (e.g. graphics and sound) must be created within the 48-hour window. I did all the sound effects on [bfxr](http://www.bfxr.net/), and the music with my own mouth. Sadly, I didn't get around to putting in a mute button for the music, but I think the sense of agitation it evokes after about 8 seconds of listening really contributes to the overall feel.  
 
-####Making it better
+#### Making it better
 
 My flatmate, true to form, looked up from his own entry to peer over my shoulder and then put me onto a ridiculously good presentation by [Vlambeer](http://www.vlambeer.com/) about improving the 'game feel' (although that's a term they contest).
 
