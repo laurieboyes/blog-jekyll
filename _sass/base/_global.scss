@@ -111,6 +111,7 @@ hr {
 a {
   color: $link-color;
   text-decoration: none;
+  word-break: break-all;
 }
 .nav {
   list-style: none;
