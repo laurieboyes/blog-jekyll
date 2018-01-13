@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android whatever
+title: Dusting off old language skills and going native with Android (temporarily)
 date: '2018-01-07 09:51:34'
 tags:
 - android
