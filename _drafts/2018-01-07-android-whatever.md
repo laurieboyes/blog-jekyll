@@ -7,7 +7,11 @@ tags:
 - java
 ---
 
+***Tl;dr*** *I wrote an Android app. It does some background processing and some location tracking and [here's the code](https://github.com/laurieboyes/pokemon-radar-location-tracker) (it's messy).*
+
 This weekend I was delighted to discover that, after 3 or 4 years of JavaScript super-fanaticism, I'm still able to Java! A bit anyway. Enough at least to write a small native Android app to plug a gap in the otherwise wonderful and increasingly powerful suite of tools available to modern web apps.
+
+Here's my gnarly spaghetti Java code: [github.com/laurieboyes/pokemon-radar-location-tracker](https://github.com/laurieboyes/pokemon-radar-location-tracker).
 
 ### Why go native?
 
@@ -27,9 +31,11 @@ I took a rather circuitious route to get here, but this allowed me to schedule a
 
 These resources combined to help a great deal:
 
- - [https://developer.android.com/reference/android/app/job/JobScheduler.html](https://developer.android.com/reference/android/app/job/JobScheduler.html)
- - [https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
- - [https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562](https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562)
+[https://developer.android.com/reference/android/app/job/JobScheduler.html](https://developer.android.com/reference/android/app/job/JobScheduler.html)
+
+[https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
+
+[https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562](https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562)
 
 #### Use Google Play services to access the device's last known location
 
@@ -43,3 +49,22 @@ This was so that on every tick the updated location could be POSTed to the web a
 
 The Android developer docs recommend usage of the Volley library for these purposes, which I felt was enough endorsement to encourage me to do the same: [https://developer.android.com/training/volley/request.html](https://developer.android.com/training/volley/request.html)
 
+#### Use Android Studio’s layout editor to make a simple UI
+
+![layout](http://static.lrnk.co.uk/blog-content/android/layout.png?cachebust=1)
+
+(And it is very simple)
+
+I thought I'd be crying out for the familiar and comfortable feeling of writing layouts with HTML and CSS, but the layout editor made this surprisingly easy! Although I couldn't say for certain whether or not my enthusiasm would hold out if I were to attempt a more complex UI.
+
+I went for a constraint-based layout, which means everything is positioned according to its proximity to everything else. There are plenty of other layout types (grid, frame, etc) but I'm happy with this one for my app.
+
+#### Persisted user input in the SharedPreferences thing
+
+Amongst other storage solutions, Android has a thing called _SharedPreferences_ which is a service for creating a persisted key value stores retreivable by an assigned name. This is pretty neat. I guess it's like [browser localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) but accessible between apps.
+
+The Android developer docs told me everything I needed: [https://developer.android.com/guide/topics/data/data-storage.html#pref](https://developer.android.com/guide/topics/data/data-storage.html#pref)
+
+### Neat
+
+Yeah I know, right? The linked resources really helped me and I'm sure would help anyone trying to acheive similar ends. If that's you, good luck!
