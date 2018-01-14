@@ -7,6 +7,7 @@ tags:
 - javascript
 - web
 alias: /making-my-pops-site-responsive
+feature-img: http://static.lrnk.co.uk/blog-content/popsite/popsite-cover.png
 ---
 
 My dad heads up a company called [Able Governance](http://www.able-governance.co.uk/), which helps other companies with their pension schemes or, uh, something. Regardless of the detail of what their offering actually involves, they wanted to make their website mobile friendly, and I was more than happy to help out.
@@ -22,9 +23,11 @@ First thing I did was stick in a viewport meta tag:
 
 
 Before (*squint*):
+
 ![meta before](http://static.lrnk.co.uk/blog-content/popsite/meta-before-framed.png#mobile-framed)
 
 After:
+
 ![meta before](http://static.lrnk.co.uk/blog-content/popsite/meta-after-framed.png#mobile-framed)
 
 Although at first glance this does arguably look like a worse experience, the viewport meta tag is very useful for responsive sites. It saves the browser from having to guess at how wide to render the page, ensuring that it's rendered for the device's screen width, meaning that the text will be big enough to read.
@@ -38,9 +41,11 @@ There's plenty more info about [viewport meta tags](https://developer.mozilla.or
 Most of the pages of the site have a sidebar with some jazzy links to other relevant pages. With our limited space on mobile devices, we needed the body content to occupy the full page width, and so the best thing for these links was for them to stack at the bottom.
 
 Before (scrolling over awkwardly):
+
 ![stacking before](http://static.lrnk.co.uk/blog-content/popsite/stacking-before-framed.png#mobile-framed)
 
 After (scrolling down with a natural ease):
+
 ![stacking after](http://static.lrnk.co.uk/blog-content/popsite/stacking-after-framed.png#mobile-framed)
 
 First thing was to remove the existing absolute positioning of the `.content` and `.sidebar` components and set them both to 100% width, so that by default they'd stack up one on top of the other.
@@ -74,9 +79,11 @@ The result looks like this on desktop:
 ![sidebar desktop](http://static.lrnk.co.uk/blog-content/popsite/sidebar%20desktop.png)
 
 And this on mobile:
+
 ![sidebar mobile](http://static.lrnk.co.uk/blog-content/popsite/sidebar%20mobile.png)
 
 And this on both (bonus gif):
+
 ![responiveness](http://static.lrnk.co.uk/blog-content/popsite/reposiveness.gif)
 
 Hooray.
@@ -128,8 +135,3 @@ Here's the code and a demo of the nav in a nice neat jsbin: http://jsbin.com/nid
 ### That'll do it
 
 As always, there are still improvements that can be made, but for the interim I'm pretty pleased with it! Check it out on your own mobile-or-otherwise device at [able-governance.co.uk](http://www.able-governance.co.uk/), and, if you fancy it, maybe put in a query for pension scheme advice or something while you're there.
-
-
-
-
-
