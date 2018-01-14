@@ -19,6 +19,9 @@ layout: default
             {{ post.title }}
           </a>
         </h1>
+        {% if post.feature-img %}
+          <div class="feature-image" style="background-image: url('{{ post.feature-img }}')"></div>
+        {% endif %}
         <p class="meta">
           {{ post.date | date: "%B %-d, %Y" }}
         </p>
