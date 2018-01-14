@@ -37,21 +37,35 @@ header {
   margin: 0;
   text-transform: uppercase;
 }
-.feature-image {
-  padding: 0%;
-  .post-link {
-    color: $feature-image-text-color;
-  }
+.has-feature-image {
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 0%;
+
   header {
-    color: $feature-image-text-color;
     background-size: $feature-image-size;
     margin-bottom: 0;
-    padding: $padding-large/2.5 $padding-large;
-    .meta {
-      color: rgba($feature-image-text-color, .7);
+
+    padding: $padding-small $padding-large $padding-x-small;
+    @media (max-width: 1000px) {
+      padding: $padding-small $padding-large / 1.6 $padding-x-small;
     }
+    @media (max-width: 576px) {
+      padding: $padding-small $padding-small $padding-x-small;
+    }
+
   }
   .post-content {
-    @extend %padding-regular;
+    padding: 0 $padding-large;
+    @media (max-width: 1000px) {
+      padding: 0 $padding-large / 1.6;
+    }
+    @media (max-width: 576px) {
+      padding: 0 $padding-small;
+    }
   }
+}
+.feature-image {
+  height: 250px;
+  background-size: cover;
 }

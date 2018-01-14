@@ -1,7 +1,20 @@
 .tags {
   width: 100%;
+  padding: $padding-x-small 0 0 0;
   .tag {
     margin-right: 0.5em;
     color: $tags-color;
+  }
+}
+
+.has-feature-image {
+  .tags {
+    padding: $padding-x-small $padding-large 0;
+    @media (max-width: 1000px) {
+      padding: $padding-x-small $padding-large / 1.6 0;
+    }
+    @media (max-width: 576px) {
+      padding: $padding-x-small $padding-small 0;
+    }
   }
 }
