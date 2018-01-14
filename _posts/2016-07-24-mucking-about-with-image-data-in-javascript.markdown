@@ -6,6 +6,7 @@ date: '2016-07-24 09:42:05'
 tags:
 - javascript
 alias: /mucking-about-with-image-data-in-javascript
+feature-img: http://static.lrnk.co.uk/blog-content/playing-with-image-data/image-data-cover.png
 ---
 
 Earlier this year I wrote _ScarfParty_, a knitting companion that centred around a dynamic pattern display that changed along with the knitter's progress. The pattern information was loaded in from a small black and white image. If you're interested, you can [learn more about my adventures with scarves](/tags.html#the-christmas-fam-scarf).

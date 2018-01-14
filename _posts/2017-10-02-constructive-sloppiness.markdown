@@ -9,6 +9,7 @@ tags:
 - web
 - the-ft
 alias: /constructive-sloppiness
+feature-img: http://static.lrnk.co.uk/blog-content/lazy-hackathon/sloppiness-cover.svg
 ---
 
 ***Tl;dr*** *For hackathons and things, insecure database solutions can save you a big wodge of time and Chrome extensions are a very versatile tool.*

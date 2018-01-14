@@ -7,6 +7,7 @@ tags:
 - knitting
 - the-christmas-fam-scarf
 alias: /the-christmas-fam-scarf-part-2
+feature-img: http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/scarf-2-cover.jpg
 ---
 
 Welcome to part two of the tale of the Christmas fam scarf. The blog can be read in any order with no detriment to enjoyment. Here's a sum-up of each.

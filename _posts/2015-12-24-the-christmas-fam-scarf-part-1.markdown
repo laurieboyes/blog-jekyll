@@ -7,6 +7,7 @@ tags:
 - knitting
 - the-christmas-fam-scarf
 alias: /the-christmas-fam-scarf-part-1
+feature-img: http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/scarf-1-cover.png
 ---
 
 Ho ho ho! Merry Christmas everyone! It's Christmas 2015 and my brother and his girlfriend are soon to unwrap what I hope is the most alarming yet heartwarming gift they've ever received: Their very own double-sided, two-colour Christmas fam scarf.

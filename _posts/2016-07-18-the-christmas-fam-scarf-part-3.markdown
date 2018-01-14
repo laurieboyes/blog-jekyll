@@ -9,6 +9,7 @@ tags:
 - javascript
 - the-christmas-fam-scarf
 alias: /the-christmas-fam-scarf-part-3
+feature-img: http://static.lrnk.co.uk/blog-content/christmas-fam-scarf/scarf-3-cover.png
 ---
 
 Welcome to the eagerly-anticipated concluding chapter of the tale of the Christmas fam scarf! The series explores in excruciating detail the creation of the scarf I lovingly crafted for my brother and his girlfriend for Christmas 2015.

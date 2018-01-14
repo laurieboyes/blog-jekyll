@@ -7,6 +7,7 @@ tags:
 - java
 - games
 alias: /self-esteem-snake
+feature-img: http://static.lrnk.co.uk/blog-content/snake-cover.png
 ---
 
 In August 2013 I embarked on another new game project in my then-favourite language Java. Heartened by the knowledge that everyone loves a good classic game clone, I decide to write my own rendition of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game)).

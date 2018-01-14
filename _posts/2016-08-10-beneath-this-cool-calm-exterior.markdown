@@ -7,6 +7,7 @@ tags:
 - javascript
 - games
 alias: /beneath-this-cool-calm-exterior
+feature-img: http://static.lrnk.co.uk/blog-content/beneath-this-cool-calm/beneath-cover.png
 ---
 
 In April 2014, after many opportunities passing by with excuses or genuine poor timing, I finally committed myself to participating in the [Ludum Dare 48-hour game competition](http://ludumdare.com/compo/).

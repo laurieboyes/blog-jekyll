@@ -7,6 +7,7 @@ tags:
 - java
 - games
 alias: /tetris-for-egotistical-java-fledglings
+feature-img: http://static.lrnk.co.uk/blog-content/tetris-cover.png
 ---
 
 *LrnceTetris* is a game I wrote in April 2010, just at the tail end of the second year of my Comp Sci degree (an explanation of the name 'Lrnce' and its derivatives is a whole other blog post). It's not the first in its category of did-all-the-fun-stuff-then-got-bored hobby coding projects I've worked on over the years but it is the first I'm willing to exhibit with only a slight accompanying cringe.
