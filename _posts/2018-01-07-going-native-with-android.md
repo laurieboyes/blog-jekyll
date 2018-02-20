@@ -5,6 +5,7 @@ date: '2018-01-07 09:51:34'
 tags:
 - android
 - java
+feature-img: http://static.lrnk.co.uk/blog-content/android/cover.png
 ---
 
 ***Tl;dr*** *I wrote an Android app. It does some background processing and some location tracking and [here's the code](https://github.com/laurieboyes/pokemon-radar-location-tracker) (it's messy).*
