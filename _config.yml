@@ -12,10 +12,10 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>London-based software developer and occasional knitter writes up on his hobby projects. Find me on GitHub <a href="https://github.com/laurieboyes">github.com/laurieboyes</a> and on Twitter <a href="https://twitter.com/LaurieBoyes">@LaurieBoyes</a></p>
+     <p>Bristol-based software developer and occasional knitter writes up on his hobby projects. Find me on GitHub <a href="https://github.com/laurieboyes">github.com/laurieboyes</a> and on Twitter <a href="https://twitter.com/LaurieBoyes">@LaurieBoyes</a></p>
   header_text_feature_image:
   footer_text: >
-   Laurie Boyes codes and sometimes knits © 2019. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and adapted from <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+   Laurie Boyes codes and sometimes knits © 2021. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and adapted from <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
